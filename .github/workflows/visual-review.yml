@@ -1,0 +1,32 @@
+name: Visual review screenshots
+on:
+  push:
+    branches: [feat/cinematic-portfolio-v2]
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright@1.58.2 install --with-deps chromium
+      - name: Run website
+        run: |
+          npm run dev > /tmp/portfolio-server.log 2>&1 &
+          for i in $(seq 1 60); do curl -fsS http://localhost:3000/ > /dev/null && break || sleep 2; done
+      - name: Capture real mobile and desktop views
+        run: |
+          mkdir -p screenshots
+          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/ screenshots/home-mobile.png
+          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "1440,900" --full-page --wait-for-timeout 1500 http://localhost:3000/ screenshots/home-desktop.png
+          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/engineering screenshots/engineering-mobile.png
+          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/about screenshots/about-mobile.png
+          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/where-the-light-falls screenshots/wtlf-mobile.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-visual-review
+          path: screenshots/
+          retention-days: 14
