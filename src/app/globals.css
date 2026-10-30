@@ -349,3 +349,17 @@ em { font-family: var(--serif); font-weight: 400; }
  .discipline-grid-two { grid-template-columns: 1fr; }
  .discipline-grid-two .discipline-card { min-height: 410px; }
 }
+
+/* Career and education: understated, readable, and shared editorial design */
+.career-timeline { margin-top: 38px; }
+.career-entry { display: grid; grid-template-columns: minmax(150px, .35fr) 1fr; gap: clamp(20px,5vw,80px); padding: 29px 0; border-bottom: 1px solid var(--line); }
+.career-date { color: var(--subtle); font-size: 11px; letter-spacing: .11em; padding-top: 7px; }
+.career-entry h3 { font-size: clamp(24px,2.7vw,41px); line-height: 1.2; letter-spacing: -.045em; margin: 10px 0; }
+.career-entry h3 em { color: var(--accent); }
+.career-entry p { max-width: 720px; color: var(--muted); font-size: 15px; margin: 0; }
+.education-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 45px 35px; margin-top: 45px; }
+.education-grid > div { padding-top: 25px; border-top: 1px solid var(--line); }
+.education-grid span { color: var(--accent); font-size: 10px; letter-spacing: .14em; font-weight: 700; }
+.education-grid h3 { font-size: clamp(25px,2.5vw,38px); margin: 18px 0 8px; letter-spacing: -.04em; }
+.education-grid p { color: var(--muted); font-size: 14px; }
+@media(max-width:620px){.career-entry{grid-template-columns:1fr;gap:8px}.education-grid{grid-template-columns:1fr;gap:25px}}
