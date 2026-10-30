@@ -16,5 +16,5 @@ export const navigation = [
 ] as const;
 export const disciplines = [
   { number: "01", eyebrow: "PROFESSION", title: "Software Engineering", description: "My path through software engineering, an interest in backend systems, and the foundations I'm building toward machine learning.", href: "/engineering", cta: "My engineering work", className: "discipline-engineering" },
-  { number: "02", eyebrow: "PASSION PROJECT", title: "Where the Light Falls", description: "One original fantasy universe, developed through storytelling, Blender character modelling and an evolving Unreal Engine game concept.", href: "/where-the-light-falls", cta: "Explore the universe", className: "discipline-games" },
+  { number: "02", eyebrow: "PASSION PROJECT", title: "Where the Light Falls", description: "One original fantasy universe explored through writing, 3D development, animation, cinematics and an evolving game concept.", href: "/where-the-light-falls", cta: "Explore the universe", className: "discipline-games" },
 ] as const;
