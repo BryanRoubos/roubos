@@ -1,7 +1,7 @@
 export const site = {
   name: "Bryan Roubos",
-  title: "Bryan Roubos — Software Engineering & Where the Light Falls",
-  description: "Bryan Roubos studies Software Engineering at HU Utrecht, contributes to backend work on AI infrastructure at Tandem-IT, learns machine learning, and creates Where the Light Falls.",
+  title: "Bryan Roubos — Software Engineering Student & Aspiring ML Engineer",
+  description: "Bryan Roubos is a Software Engineering student at HU Utrecht and aspiring Machine Learning Engineer, contributing to backend work at Tandem-IT and creating the fantasy universe Where the Light Falls.",
   url: "https://bryanroubos.com",
   email: "roubos@proton.me",
   github: "https://github.com/BryanRoubos",
@@ -15,6 +15,6 @@ export const navigation = [
   { label: "About", href: "/about" },
 ] as const;
 export const disciplines = [
-  { number: "01", eyebrow: "PROFESSION", title: "Software Engineering", description: "Backend development at Tandem-IT, infrastructure, APIs, and the path I'm building toward machine learning engineering.", href: "/engineering", cta: "My engineering work", className: "discipline-engineering" },
-  { number: "02", eyebrow: "PASSION PROJECT", title: "Where the Light Falls", description: "One fictional universe. Writing, character modelling, 3D environments, and Unreal Engine — all part of the same project.", href: "/where-the-light-falls", cta: "Explore the universe", className: "discipline-games" },
+  { number: "01", eyebrow: "PROFESSION", title: "Software Engineering", description: "My journey from ICT into software engineering, backend work at Tandem-IT, and the foundations I'm building toward a career in machine learning.", href: "/engineering", cta: "My engineering work", className: "discipline-engineering" },
+  { number: "02", eyebrow: "PASSION PROJECT", title: "Where the Light Falls", description: "One original fantasy universe, developed through storytelling, Blender character modelling and an evolving Unreal Engine game concept.", href: "/where-the-light-falls", cta: "Explore the universe", className: "discipline-games" },
 ] as const;
