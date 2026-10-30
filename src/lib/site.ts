@@ -1,7 +1,7 @@
 export const site = {
   name: "Bryan Roubos",
   title: "Bryan Roubos — Software Engineering Student & Aspiring ML Engineer",
-  description: "Bryan Roubos is a Software Engineering student at HU Utrecht and aspiring Machine Learning Engineer, contributing to backend work at Tandem-IT and creating the fantasy universe Where the Light Falls.",
+  description: "Bryan Roubos is a Software Engineering student at HU Utrecht and aspiring Machine Learning Engineer, learning software and ML fundamentals while creating the original fantasy universe Where the Light Falls.",
   url: "https://bryanroubos.com",
   email: "roubos@proton.me",
   github: "https://github.com/BryanRoubos",
