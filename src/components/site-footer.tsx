@@ -14,7 +14,7 @@ export function SiteFooter() {
           <nav aria-label="Footer navigation">{navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav>
           <div className="footer-external"><a href={site.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href={"mailto:" + site.email}>Email ↗</a></div>
         </div>
-        <div className="footer-legal"><span>© {new Date().getFullYear()} Bryan Roubos</span><span>Built with care. No borrowed game art.</span><a href="#top">BACK TO TOP ↑</a></div>
+        <div className="footer-legal"><span>© {new Date().getFullYear()} Bryan Roubos</span><span>Software engineering &amp; original storytelling.</span><a href="#top">BACK TO TOP ↑</a></div>
       </div>
     </footer>
   );

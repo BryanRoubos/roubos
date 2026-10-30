@@ -13,6 +13,6 @@ export const metadata: Metadata={
 };
 export const viewport: Viewport={width:"device-width",initialScale:1,themeColor:"#080c12"};
 export default function RootLayout({children}:Readonly<{children:React.ReactNode}>){
- const person={"@context":"https://schema.org","@type":"ProfilePage","@id":site.url+"/#profile",url:site.url+"/",name:"Bryan Roubos — Software Engineering",mainEntity:{"@type":"Person","@id":site.url+"/#bryan",name:site.name,url:site.url,sameAs:[site.github,site.linkedin],description:site.description,knowsAbout:["Software Engineering","Backend Development","AI Infrastructure","Machine Learning","Creative Writing","Blender","Unreal Engine","Game Development"]}};
+ const person={"@context":"https://schema.org","@type":"Person","@id":site.url+"/#bryan",name:site.name,url:site.url,sameAs:[site.github,site.linkedin],description:site.description,knowsAbout:["Software Engineering","Backend Development","Machine Learning","Creative Writing","3D Development","Cinematics","Game Development"]};
  return <html lang="en"><body id="top"><a className="skip-link" href="#main">Skip to content</a><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(person).replace(/</g,"\\u003c")}}/><SiteHeader/><main id="main">{children}</main><SiteFooter/></body></html>;
 }

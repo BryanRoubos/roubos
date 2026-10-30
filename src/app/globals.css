@@ -363,3 +363,7 @@ em { font-family: var(--serif); font-weight: 400; }
 .education-grid h3 { font-size: clamp(25px,2.5vw,38px); margin: 18px 0 8px; letter-spacing: -.04em; }
 .education-grid p { color: var(--muted); font-size: 14px; }
 @media(max-width:620px){.career-entry{grid-template-columns:1fr;gap:8px}.education-grid{grid-template-columns:1fr;gap:25px}}
+
+/* Readability and accessibility refinements */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+@media (max-width: 620px) { .career-date { font-size: 12px; } .career-entry p, .education-grid p { font-size: 15px; line-height: 1.7; } }
