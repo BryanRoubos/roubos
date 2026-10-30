@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Bryan Roubos — cinematic personal portfolio
 
-## Getting Started
+A typography-led, image-free portfolio for software engineering, writing, and 3D / game-world exploration. Built on the existing Next.js App Router project.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Run `npm run build` for production verification.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `/` — cinematic landing page and introduction
+- `/engineering` — engineering approach and honest ML learning status
+- `/writing` — Where the Light Falls writing, explicitly an early paused novel
+- `/3d-games` — Blender / Unreal Engine experimentation, with no claimed finished game
+- `/about` — personal background and links
 
-## Learn More
+Legacy unfinished blog, admin, login, and registration routes have been removed. Former /blog and /contact URLs redirect to the relevant sections.
 
-To learn more about Next.js, take a look at the following resources:
+## DRY architecture
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/lib/site.ts`: navigation, disciplines, contact links, site metadata
+- `src/components/`: shared header, footer, page heading, section title
+- `src/app/globals.css`: visual tokens, shared patterns, responsive layouts
+- `src/app/sitemap.ts` and `robots.ts`: generated crawler resources
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+No game screenshots, old WTLF illustrations, generated art, stock imagery, or third-party fonts are used. Abstract hero/stage designs are CSS and typography only.
 
-## Deploy on Vercel
+When genuine original 3D work is ready, replace abstract visual stages with optimized AVIF/WebP renders, useful alt text, accessible captions, and a lightweight fallback. Keep 3D render processing outside the browser until interactive 3D genuinely adds value.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Before going live
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Verify `bryanroubos.com` is the correct canonical domain and DNS is pointed at the chosen host; change `src/lib/site.ts` if not.
+2. Confirm public contact email and biography wording.
+3. Test keyboard navigation, mobile menu, zoom, reduced-motion and screen-reader headings.
+4. Run `npm install && npm run build` and Lighthouse / Core Web Vitals on a deployed preview.
+5. Confirm GitHub links, canonical URLs, `/sitemap.xml`, `/robots.txt`, and metadata.
+6. Add only independently made and approved 3D work later. Do not publish private WTLF manuscript material.
+
+This branch intentionally keeps Next.js rather than migrating an existing codebase to Astro solely for framework preference. It is primarily server-rendered static content; no client-side JavaScript is required for navigation.
