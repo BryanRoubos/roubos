@@ -331,3 +331,9 @@ em { font-family: var(--serif); font-weight: 400; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: clamp(40px, 10.5vw, 51px); letter-spacing: -.075em; }
+  .hero-overline-rule { display: none; }
+  .art-label strong { font-size: 27px; }
+}

@@ -5,7 +5,7 @@ A typography-led, image-free portfolio for software engineering, writing, and 3D
 ## Run locally
 
 ```bash
-npm ci
+npm install
 npm run dev
 ```
 
@@ -37,7 +37,7 @@ When genuine original 3D work is ready, replace abstract visual stages with opti
 1. Verify `bryanroubos.com` is the correct canonical domain and DNS is pointed at the chosen host; change `src/lib/site.ts` if not.
 2. Confirm public contact email and biography wording.
 3. Test keyboard navigation, mobile menu, zoom, reduced-motion and screen-reader headings.
-4. Run `npm ci && npm run build` and Lighthouse / Core Web Vitals on a deployed preview.
+4. Run `npm install && npm run build` and Lighthouse / Core Web Vitals on a deployed preview.
 5. Confirm GitHub links, canonical URLs, `/sitemap.xml`, `/robots.txt`, and metadata.
 6. Add only independently made and approved 3D work later. Do not publish private WTLF manuscript material.
 
