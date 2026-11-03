@@ -9,10 +9,10 @@ export const site = {
   wtl: "https://bryanroubos.github.io/where-the-light-falls-site/",
 } as const;
 export const navigation = [
-  { label: "Home", href: "/" },
-  { label: "Machine Learning", href: "/engineering" },
-  { label: "Where the Light Falls", href: "/where-the-light-falls" },
-  { label: "About", href: "/about" },
+  { label: "About", href: "/#about" },
+  { label: "The ML Lab", href: "/#lab" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Creative", href: "/#creative" },
 ] as const;
 export const disciplines = [
   { number: "01", eyebrow: "THE LAB", title: "Machine Learning", description: "How models learn, from the maths to the infrastructure that runs them.", href: "/engineering", cta: "Follow the path", className: "discipline-engineering" },
