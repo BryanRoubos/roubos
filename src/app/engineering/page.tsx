@@ -19,8 +19,8 @@ export default function Engineering() {
           <div className="prose">
             <p>Fantasy World AI Lab is my hands-on machine learning learning project. I&apos;m building a small fictional world simulation to explore how characters make decisions based on their circumstances, goals, relationships, and experiences—and how models might learn to predict those decisions.</p>
             <p>The project roadmap begins with structured data for characters, locations, relationships and events. From there, I&apos;ll build a transparent rule-based character simulator, record its situations and decisions as data, then train and evaluate prediction models against simple baselines. Understanding what works, what fails and why matters more than making the simulation look intelligent.</p>
-            <p>Later stages explore whether additional context and memory improve predictions, followed by neural networks and potentially reinforcement learning. The interactive character decision demo on the homepage currently uses hand-written rules and synthetic characters. It illustrates the simulation idea; no predictive model has been trained for that demo.</p>
-            <Link className="text-link" href="/#lab">Try the character-decision prototype <span aria-hidden="true">↗</span></Link>
+            <p>Later stages explore whether additional context and memory improve predictions, followed by neural networks and potentially reinforcement learning. The project is a learning roadmap, not a claim of a finished trained model. I keep the distinction between explicit simulation rules and learned predictions clear.</p>
+            <a className="text-link" href={site.github} target="_blank" rel="noopener noreferrer">Explore my development work <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>

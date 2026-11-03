@@ -10,9 +10,9 @@ export const site = {
 } as const;
 export const navigation = [
   { label: "About", href: "/#about" },
-  { label: "ML Lab", href: "/#lab" },
+  { label: "Engineering", href: "/engineering" },
   { label: "Work", href: "/#experience" },
-  { label: "Creative", href: "/#creative" },
+  { label: "Creative", href: "/where-the-light-falls" },
   { label: "Connect", href: "/#contact" },
 ] as const;
 export const disciplines = [

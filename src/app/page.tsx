@@ -3,9 +3,9 @@ import { site } from "@/lib/site";
 import "./reference-home.css";
 
 const areas = [
-  { title: "ML Lab", category: "MACHINE LEARNING / AI PROJECTS", description: "Exploring the foundations of machine learning — from Python, mathematics and model evaluation to real-world applications.", link: "/engineering", action: "EXPLORE ML LAB", image: "/reference-lab.webp", className: "lab" },
-  { title: "Selected Work", category: "SOFTWARE / PROJECTS / EXPERIENCE", description: "A curated selection of backend development, engineering collaborations and independent projects.", link: "/engineering#experience", action: "VIEW PROJECTS", image: "/reference-work.webp", className: "work" },
-  { title: "Where the Light Falls", category: "AN ORIGINAL FANTASY UNIVERSE", description: "An ongoing worldbuilding project explored through writing, character design, 3D and game development.", link: "/where-the-light-falls", action: "ENTER THE WORLD", image: "/reference-world.webp", className: "world" },
+  { title: "Software Engineering", category: "BACKEND / SYSTEMS / ML FOUNDATIONS", description: "Building software, learning the foundations of machine learning, and understanding how systems work.", link: "/engineering", action: "EXPLORE ENGINEERING", className: "lab" },
+  { title: "Selected Work", category: "SOFTWARE / PROJECTS / EXPERIENCE", description: "Projects, collaborations, and the small steps behind the things I build.", link: "/engineering#experience", action: "VIEW PROJECTS", className: "work" },
+  { title: "Where the Light Falls", category: "AN ORIGINAL FANTASY UNIVERSE", description: "An original fantasy world explored through writing, characters, environments and 3D.", link: "/where-the-light-falls", action: "ENTER THE WORLD", className: "world" },
 ];
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
       <section className="reference-cards shell" aria-label="Explore my work" id="selected">
         {areas.map((area) => (
           <Link key={area.title} className={`reference-card reference-card-${area.className}`} href={area.link}>
-            <img className="reference-card-art" src={area.image} alt="" loading="lazy" />
+            <div className="reference-card-art" aria-hidden="true" />
             <div className="reference-card-overlay" />
             <span className="reference-card-symbol" aria-hidden="true">{area.className === "lab" ? "✳" : area.className === "work" ? "⌘" : "✦"}</span>
             <div className="reference-card-copy">
@@ -51,7 +51,7 @@ export default function Home() {
         <div><span className="reference-discipline-icon" aria-hidden="true">⬡</span><span>3D, CINEMATICS<br />&amp; GAME DEV</span></div>
       </div>
 
-      <section className="reference-cinematic" aria-label="Where technology meets imagination">
+      <section className="reference-cinematic" id="creative" aria-label="Where technology meets imagination">
         <div className="reference-cinematic-photo" aria-hidden="true" />
         <div className="shell reference-cinematic-inner">
           <p className="reference-small-overline">WHERE TECHNOLOGY MEETS IMAGINATION</p>
