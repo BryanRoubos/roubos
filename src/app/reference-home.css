@@ -15,7 +15,7 @@ body:has(.reference-home) .header-contact span{font-size:17px}
 .reference-home a:focus-visible{outline:2px solid #f2c2a1;outline-offset:5px}
 .reference-hero{isolation:isolate;position:relative;min-height:560px;background:radial-gradient(ellipse at 35% 89%,rgba(104,19,27,.36),transparent 51%),#0b0a0c}
 .reference-hero-backdrop{position:absolute;inset:0;z-index:-1;overflow:hidden}
-.reference-hero-photo{position:absolute;top:0;bottom:0;right:0;width:63%;background-image:url('/reference-portrait.webp');background-size:cover;background-position:center 41%;filter:saturate(1.03);mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%)}
+.reference-hero-photo{position:absolute;top:0;bottom:0;right:0;width:63%;background-image:url('/hero.jpg');background-size:cover;background-position:center 41%;filter:saturate(1.03);mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%)}
 .reference-hero-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,7,9,.01) 58%,#0b0a0c 100%),linear-gradient(to right,#0b0a0c 0%,transparent 36%)}
 .reference-hero-arc{position:absolute;width:750px;height:490px;border:1px solid rgba(191,65,53,.37);border-radius:50%;transform:rotate(-36deg);right:5%;top:17%;pointer-events:none;opacity:.7}
 .reference-hero-arc-b{right:-17%;top:-30%;width:920px;height:800px;border-color:rgba(197,59,47,.25);transform:rotate(26deg)}
@@ -129,7 +129,7 @@ body:has(.reference-home) .footer-bottom{padding-block:24px}
 .reference-hero{min-height:615px}
 .reference-hero-shell{min-height:615px}
 .reference-hero-photo{
- width:64%;right:0;top:0;bottom:0;background-image:url('/hero-portrait.webp'),url('/reference-portrait.webp');
+ width:64%;right:0;top:0;bottom:0;background-image:url('/hero.jpg');
  background-size:cover;background-position:center 42%;
  filter:none;opacity:1;
  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.86) 21%,#000 41%);
@@ -217,3 +217,6 @@ body:has(.reference-home) .footer-bottom{padding-block:24px}
  background-image:url('/wtlf-banner.png')!important;
  background-position:center 50%;
 }
+
+/* Canonical approved image sources: hero.jpg, ThisOne.png and WTLF artwork only. */
+.reference-hero-photo{background-image:url('/hero.jpg')!important}
