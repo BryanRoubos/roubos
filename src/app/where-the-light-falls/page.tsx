@@ -31,7 +31,7 @@ export default function Creative() {
             <details className="chapter-draft-reader">
               <summary>Read the original first draft <span aria-hidden="true">↘</span></summary>
               <article aria-label="Where the Light Falls, Chapter One first draft" className="chapter-draft-body">
-                {chapterOneDraft.split(/\\n\\s*\\n/).map((block, index) => {
+                {chapterOneDraft.split(/\n\s*\n/).map((block, index) => {
                   const t = block.trim();
                   if (!t) return null;
                   if (t.startsWith("# ")) return <h2 key={index}>{t.slice(2)}</h2>;
