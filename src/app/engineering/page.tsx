@@ -26,7 +26,7 @@ export default function Engineering() {
       </section>
       <section className="section-space panel-section">
         <div className="shell">
-          <div className="section-title-meta"><span>02 / HOW I'M LEARNING</span><span>BUILD / TEST / REFLECT</span></div>
+          <div className="section-title-meta"><span>02 / HOW I&apos;M LEARNING</span><span>BUILD / TEST / REFLECT</span></div>
           <div className="process-grid">
             <div><span>01 — FOUNDATIONS</span><h3>Understand the basics.</h3><p>Develop my Python, mathematics, and software foundations while learning to represent a problem clearly.</p></div>
             <div><span>02 — EXPERIMENTS</span><h3>Make it observable.</h3><p>Represent character decisions with explicit rules, collect reproducible data, and compare learned predictions with simple baselines.</p></div>
