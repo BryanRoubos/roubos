@@ -1,7 +1,7 @@
 name: Visual review screenshots
 on:
   push:
-    branches: [feat/cinematic-portfolio-v2]
+    branches: [main]
 jobs:
   screenshots:
     runs-on: ubuntu-24.04
@@ -23,7 +23,6 @@ jobs:
           npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/ screenshots/home-mobile.png
           npx playwright@1.58.2 screenshot --browser chromium --viewport-size "1440,900" --full-page --wait-for-timeout 1500 http://localhost:3000/ screenshots/home-desktop.png
           npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/engineering screenshots/engineering-mobile.png
-          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/about screenshots/about-mobile.png
           npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/where-the-light-falls screenshots/wtlf-mobile.png
       - uses: actions/upload-artifact@v4
         with:
