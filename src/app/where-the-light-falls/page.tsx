@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeading } from "@/components/page-heading";
+import { chapterOneDraft } from "@/lib/chapter-one-draft";
 
 export const metadata: Metadata = {
   title: "Where the Light Falls — An Original Fantasy Universe",
@@ -22,7 +23,26 @@ export default function Creative() {
         </div>
       </section>
       <section className="section-space panel-section"><div className="shell two-column-section"><div><span className="eyebrow">BEYOND THE MANUSCRIPT</span><h2>One world.<br /><em>Different ways to explore it.</em></h2></div><div className="prose"><p>Alongside the writing, I&apos;m exploring how the setting and its characters could take shape through 3D modelling, environments, cinematics, and eventually interactive experiences. Blender and game-development tools are part of that creative learning process.</p><p>These are connected explorations rather than a finished game or animated production. The goal is to keep experimenting with how the same world feels when experienced through different mediums.</p></div></div></section>
-      <section className="section-space"><div className="shell two-column-section"><div><span className="eyebrow">THE CONNECTION</span><h2>Where stories<br /><em>meet experiments.</em></h2></div><div className="prose"><p>The city behind Where the Light Falls also inspires the small navigation environment in Fantasy World AI Lab, my machine learning learning project. It provides a meaningful setting for experimenting with how agents make decisions.</p><p>The fiction and the experiments are separate projects, but they influence each other: one creates questions about believable worlds, and the other gives me a way to explore those questions technically.</p><Link className="text-link" href="/#lab">Explore the AI Lab <span aria-hidden="true">↗</span></Link></div></div></section>
+      <section className="section-space"><div className="shell two-column-section"><div><span className="eyebrow">THE CONNECTION</span><h2>Where stories<br /><em>meet experiments.</em></h2></div><div className="prose"><p>The fictional world behind Where the Light Falls also inspires Fantasy World AI Lab, my hands-on machine learning project. In that project, I explore how simulated characters might choose actions based on their goals, circumstances and relationships.</p><p>The fiction and the experiments are separate projects, but they influence each other: one creates questions about believable worlds, and the other gives me a way to explore those questions technically.</p><Link className="text-link" href="/#lab">Explore the AI Lab <span aria-hidden="true">↗</span></Link></div></div></section>
+      <section className="section-space panel-section" id="chapter-one">
+        <div className="shell two-column-section">
+          <div><span className="eyebrow">FROM THE WRITING DESK</span><h2>Chapter One.<br /><em>First draft.</em></h2><p className="chapter-draft-disclaimer">An early manuscript shared as a work in progress. The story, characters and details may change.</p></div>
+          <div>
+            <details className="chapter-draft-reader">
+              <summary>Read the original first draft <span aria-hidden="true">↘</span></summary>
+              <article aria-label="Where the Light Falls, Chapter One first draft" className="chapter-draft-body">
+                {chapterOneDraft.split(/\\n\\s*\\n/).map((block, index) => {
+                  const t = block.trim();
+                  if (!t) return null;
+                  if (t.startsWith("# ")) return <h2 key={index}>{t.slice(2)}</h2>;
+                  if (t.startsWith("## ")) return <h3 key={index}>{t.slice(3)}</h3>;
+                  return <p key={index}>{t}</p>;
+                })}
+              </article>
+            </details>
+          </div>
+        </div>
+      </section>
       <section className="next-page"><div className="shell"><span>BACK TO THE PORTFOLIO</span><Link href="/">Explore my work <span aria-hidden="true">↗</span></Link></div></section>
     </>
   );
