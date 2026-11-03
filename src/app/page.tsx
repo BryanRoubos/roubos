@@ -25,7 +25,7 @@ export default function Home() {
       <section className="portfolio-lab-section" id="lab"><div className="shell">
         <div className="portfolio-section-heading"><span className="portfolio-label">02 / LEARNING PROJECT</span><div><h2>A world to <em>learn in.</em></h2><p>What makes a character choose one action over another? Fantasy World AI Lab is my machine learning learning project. Using a fictional world as a setting, I&apos;m working toward simulations where characters make decisions based on their goals, knowledge, relationships and experiences—and models that can learn to predict those choices.</p></div></div>
         <CityLearningLab />
-        <div className="portfolio-under-lab"><p>The interactive city route-finding demo above is a separate, early Q-learning exercise—not the main Fantasy World AI Lab simulation. The project itself starts with character data, transparent decision rules and datasets; model training and evaluation follow as I develop the foundations.</p><a href="/engineering">Explore the learning project ↗</a></div>
+        <div className="portfolio-under-lab"><p>Try changing the character and the situation above. This is an early rule-based decision simulation using illustrative data, not a trained model. My learning roadmap builds from character data and transparent decision rules toward datasets, model training, and careful evaluation.</p><a href="/engineering">Explore the learning project ↗</a></div>
       </div></section>
 
       <section className="portfolio-work-section" id="experience"><div className="shell">
