@@ -1,3 +1,10 @@
 import type { MetadataRoute } from "next";
-import { navigation, site } from "@/lib/site";
-export default function sitemap(): MetadataRoute.Sitemap {return navigation.map(({href})=>({url:site.url+(href==="/"?"/":href),changeFrequency:"monthly" as const,priority:href==="/"?1:0.7}));}
+import { site } from "@/lib/site";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    { url: site.url, changeFrequency: "monthly", priority: 1 },
+    { url: site.url + "/engineering", changeFrequency: "monthly", priority: 0.8 },
+    { url: site.url + "/where-the-light-falls", changeFrequency: "monthly", priority: 0.7 },
+  ];
+}
