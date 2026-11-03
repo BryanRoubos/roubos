@@ -12,12 +12,12 @@ export function SiteHeader() {
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         </nav>
-        <a className="header-contact" href={"mailto:" + site.email}>LET&apos;S TALK <span aria-hidden="true">↗</span></a>
+        <Link className="header-contact" href="/#contact">CONNECT <span aria-hidden="true">↗</span></Link>
         <details className="mobile-menu">
           <summary aria-label="Toggle navigation"><span className="menu-lines" aria-hidden="true"><i /><i /></span><span>MENU</span></summary>
           <nav aria-label="Mobile navigation">
             {navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
-            <a href={"mailto:" + site.email}>Get in touch ↗</a>
+            <Link href="/#contact">Get in touch ↗</Link>
           </nav>
         </details>
       </div>
