@@ -202,3 +202,18 @@ body:has(.reference-home) .footer-bottom{padding-block:24px}
  .reference-hero h1{font-size:clamp(43px,10.3vw,58px)}
  .reference-card{height:355px}
 }
+
+
+/* Serve the original full-resolution uploads rather than compressed mockup excerpts. */
+.reference-card-work .reference-card-art{
+ background-image:url('/selected-work.png')!important;
+ background-position:center 41%;
+}
+.reference-card-world .reference-card-art{
+ background-image:url('/wtlf-world.png')!important;
+ background-position:center 46%;
+}
+.reference-cinematic-photo{
+ background-image:url('/wtlf-banner.png')!important;
+ background-position:center 50%;
+}

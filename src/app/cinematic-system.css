@@ -97,3 +97,9 @@ body{background:#0b090c;color:#f6eae0}
  .chapter-draft-reader summary{font-size:16px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Full-size world artwork from existing GitHub uploads. */
+.writing-art{
+ background-image:linear-gradient(0deg,rgba(17,9,12,.75),transparent 52%),linear-gradient(90deg,rgba(13,9,12,.24),transparent 60%),url('/wtlf-world.png')!important;
+ background-size:cover;background-position:center;
+}
