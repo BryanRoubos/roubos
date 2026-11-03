@@ -1,0 +1,56 @@
+
+.world-page{color:#f5e9df;background:#0b090c}
+.world-page a:focus-visible{outline:2px solid #f2c2a1;outline-offset:5px}
+.world-hero{height:min(790px,85vh);min-height:590px;position:relative;display:flex;align-items:flex-end;isolation:isolate;overflow:hidden}
+.world-hero-image{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:center}
+.world-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(0deg,#0b090c 0%,rgba(11,9,12,.54) 37%,rgba(11,9,12,.16) 80%),linear-gradient(90deg,rgba(11,9,12,.72),transparent 85%)}
+.world-hero-copy{padding-block:110px 74px;width:100%}
+.world-page h1,.world-page h2,.world-page h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.045em}
+.world-hero h1{font-size:clamp(65px,9vw,150px);line-height:.92;margin:18px 0 24px}
+.world-page h1 em,.world-page h2 em{color:#e7b59a}
+.world-hero-copy>p{font-size:clamp(17px,2vw,23px);max-width:610px;line-height:1.55;color:#e9d6c9}
+.world-hero-actions{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:28px}
+.world-text-link{color:#e7baa0;font-weight:700;font-size:11px;letter-spacing:.14em;text-decoration:none}
+.world-page .two-column-section h2,.world-section-heading h2,.world-preview-grid h2{font-size:clamp(44px,5.5vw,82px);line-height:1.03;margin:16px 0 24px}
+.world-gallery-section{background:#160f13}
+.world-section-heading{max-width:740px;margin-bottom:44px}
+.world-section-heading p,.world-district p,.world-character p,.world-preview-grid p{font-size:clamp(15px,1.3vw,18px);line-height:1.7;color:#cbb9ae}
+.world-district-grid,.world-character-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.world-district,.world-character{min-width:0}
+.world-image-frame{overflow:hidden;border:1px solid rgba(222,175,151,.2);background:#21171b;aspect-ratio:4/5}
+.world-image-frame img{display:block;width:100%;height:100%;object-fit:cover}
+.world-district-grid .world-image-frame{aspect-ratio:4/4.4}
+.world-district h3,.world-character h3{font-size:clamp(26px,2.5vw,39px);margin:22px 0 6px}
+.world-district p,.world-character p{margin:0 0 18px}
+.world-wide-art{margin-top:45px}
+.world-wide-art img{width:100%;height:auto;max-height:550px;object-fit:cover}
+.world-wide-art p{font-size:13px;color:#aa9388}
+.world-characters{background:#0f0b0e}
+.world-mediums{background:#1b1116}
+.world-chapter-preview{background:#100b0e}
+.world-preview-grid{display:grid;grid-template-columns:1fr .8fr;align-items:center;gap:clamp(35px,7vw,130px)}
+.world-preview-grid>img{width:100%;height:540px;object-fit:cover;object-position:center 35%;border:1px solid rgba(226,171,146,.25)}
+.world-excerpt{font:italic clamp(22px,2.6vw,34px)/1.48 Georgia,serif!important;color:#f0ddd0!important;max-width:650px}
+.world-preview-grid .reference-primary{margin-top:22px}
+.chapter-heading{padding-top:100px;padding-bottom:48px;max-width:980px}
+.chapter-heading .eyebrow{display:block;margin-top:55px}
+.chapter-heading h1{font-size:clamp(65px,9vw,135px);margin:16px 0}
+.chapter-heading p{font-size:19px;color:#ccb6aa}
+.chapter-illustration{margin:0 auto 55px;max-width:850px;text-align:center}
+.chapter-illustration img{max-width:100%;height:450px;width:auto;object-fit:contain}
+.chapter-reading{max-width:740px;margin:0 auto;padding:0 22px 95px;color:#ead7c8;font:normal clamp(18px,1.5vw,21px)/1.85 Georgia,serif}
+.chapter-reading p{margin:0 0 1.5em}
+.chapter-reading h2{font-size:40px;margin:65px 0 10px}
+.chapter-reading h3{font-size:24px;color:#d6b39e;margin:16px 0 42px}
+.chapter-return{padding-bottom:100px;max-width:740px}
+@media(max-width:850px){.world-hero{min-height:660px;height:76vh}.world-district-grid,.world-character-grid{grid-template-columns:1fr 1fr}.world-preview-grid{grid-template-columns:1fr}.world-preview-grid>img{height:420px}.world-hero-copy{padding-block:85px 55px}}
+@media(max-width:600px){.world-hero{min-height:600px;height:80vh}.world-hero-image{object-position:61% center}.world-hero h1{font-size:clamp(56px,13vw,85px)}.world-district-grid,.world-character-grid{grid-template-columns:1fr;gap:35px}.world-district-grid .world-image-frame{aspect-ratio:4/3}.world-character .world-image-frame{aspect-ratio:4/4.5}.world-hero-actions{gap:20px}.chapter-heading{padding-top:60px}.chapter-illustration img{height:320px}.chapter-reading{font-size:19px;line-height:1.8;padding-inline:24px}.world-preview-grid>img{height:340px}}
+
+/* Shared editorial actions also work when opening the story route directly. */
+.world-page .reference-primary{display:inline-flex;align-items:center;justify-content:space-between;min-height:48px;gap:24px;padding:13px 23px;border-radius:3px;background:linear-gradient(120deg,#f1d8c0,#d3a388);color:#1a1112;text-decoration:none;font:800 11px/1.3 Arial,Helvetica,sans-serif;letter-spacing:.13em}
+.world-page .reference-primary span{font-size:18px}
+.world-page .reference-primary:hover{filter:brightness(1.09)}
+.world-page .reference-primary:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.world-page .world-hero-actions .world-text-link{min-height:44px;display:inline-flex;align-items:center}
+.world-page .chapter-reading h2,.world-page .chapter-reading h3{scroll-margin-top:80px}
+@media(max-width:600px){.world-page .reference-primary{max-width:100%}.world-page .world-hero-copy{padding-inline:0}}

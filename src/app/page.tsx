@@ -2,12 +2,6 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import "./reference-home.css";
 
-const areas = [
-  { title: "Software Engineering", category: "BACKEND / SYSTEMS / ML FOUNDATIONS", description: "Building software, learning the foundations of machine learning, and understanding how systems work.", link: "/engineering", action: "EXPLORE ENGINEERING", className: "lab" },
-  { title: "Selected Work", category: "SOFTWARE / PROJECTS / EXPERIENCE", description: "Projects, collaborations, and the small steps behind the things I build.", link: "/engineering#experience", action: "VIEW PROJECTS", className: "work" },
-  { title: "Where the Light Falls", category: "AN ORIGINAL FANTASY UNIVERSE", description: "An original fantasy world explored through writing, characters, environments and 3D.", link: "/where-the-light-falls", action: "ENTER THE WORLD", className: "world" },
-];
-
 export default function Home() {
   return (
     <div className="reference-home">
@@ -22,59 +16,68 @@ export default function Home() {
             <div className="reference-overline"><span>BRYAN ROUBOS</span><i /></div>
             <h1 id="reference-headline">I build systems.<br /><em>And worlds.</em></h1>
             <p className="reference-deck">Software engineering, machine learning,<br />and original worldbuilding.</p>
-            <p className="reference-intro">I&apos;m a software engineering student at HU Utrecht, drawn to the space between technology and imagination. From building software and exploring machine learning to creating fictional worlds, I&apos;m driven by curiosity about how things work—and what they could become.</p>
-            <div className="reference-hero-actions"><a href="#selected" className="reference-primary">EXPLORE MY WORK <span aria-hidden="true">→</span></a><Link className="reference-secondary" href="/where-the-light-falls">WHERE THE LIGHT FALLS <span aria-hidden="true">↗</span></Link></div>
+            <p className="reference-intro">I&apos;m a Software Engineering student at HU Utrecht, working toward machine learning engineering. I build software, study how intelligent systems work, and create the original fantasy universe <em>Where the Light Falls</em>.</p>
+            <div className="reference-hero-actions">
+              <Link href="/engineering" className="reference-primary">EXPLORE ENGINEERING <span aria-hidden="true">→</span></Link>
+              <Link className="reference-secondary" href="/where-the-light-falls">ENTER WHERE THE LIGHT FALLS <span aria-hidden="true">↗</span></Link>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="reference-cards shell" aria-label="Explore my work" id="selected">
-        {areas.map((area) => (
-          <Link key={area.title} className={`reference-card reference-card-${area.className}`} href={area.link}>
-            <div className="reference-card-art" aria-hidden="true" />
-            <div className="reference-card-overlay" />
-            <span className="reference-card-symbol" aria-hidden="true">{area.className === "lab" ? "✳" : area.className === "work" ? "⌘" : "✦"}</span>
-            <div className="reference-card-copy">
-              <h2>{area.title}</h2>
-              <span className="reference-card-category">{area.category}</span>
-              <p>{area.description}</p>
-              <span className="reference-card-action">{area.action} <span aria-hidden="true">→</span></span>
-            </div>
-          </Link>
-        ))}
+        <Link className="reference-card reference-card-work" href="/engineering">
+          <div className="reference-card-art" aria-hidden="true" />
+          <div className="reference-card-overlay" aria-hidden="true" />
+          <div className="reference-card-copy">
+            <span className="reference-card-category">BACKEND / SYSTEMS / MACHINE LEARNING</span>
+            <h2>Engineering &amp;<br />Machine Learning</h2>
+            <p>Backend systems, machine learning foundations and experiments built to understand how models learn and behave.</p>
+            <span className="reference-card-action">EXPLORE ENGINEERING <span aria-hidden="true">→</span></span>
+          </div>
+        </Link>
+        <Link className="reference-card reference-card-world" href="/where-the-light-falls">
+          <div className="reference-card-art" aria-hidden="true" />
+          <div className="reference-card-overlay" aria-hidden="true" />
+          <div className="reference-card-copy">
+            <span className="reference-card-category">WRITING / WORLDBUILDING / VISUAL DEVELOPMENT</span>
+            <h2>Where the<br />Light Falls</h2>
+            <p>An original fantasy universe developed through writing, worldbuilding, character design and 3D.</p>
+            <span className="reference-card-action">ENTER THE WORLD <span aria-hidden="true">→</span></span>
+          </div>
+        </Link>
       </section>
 
-      <div className="reference-disciplines shell" aria-label="Areas of interest">
-        <div><span className="reference-discipline-icon" aria-hidden="true">▱</span><span>SOFTWARE<br />ENGINEERING</span></div>
-        <div><span className="reference-discipline-icon" aria-hidden="true">◇</span><span>MACHINE<br />LEARNING</span></div>
-        <div><span className="reference-discipline-icon" aria-hidden="true">▤</span><span>WORLD BUILDING<br />&amp; WRITING</span></div>
-        <div><span className="reference-discipline-icon" aria-hidden="true">⬡</span><span>3D, CINEMATICS<br />&amp; GAME DEV</span></div>
-      </div>
-
-      <section className="reference-cinematic" id="creative" aria-label="Where technology meets imagination">
+      <section className="reference-cinematic" id="creative" aria-label="Original fantasy world">
         <div className="reference-cinematic-photo" aria-hidden="true" />
         <div className="shell reference-cinematic-inner">
-          <p className="reference-small-overline">WHERE TECHNOLOGY MEETS IMAGINATION</p>
+          <p className="reference-small-overline">AN ORIGINAL FANTASY UNIVERSE</p>
           <h2>Engineering in the real world.<br /><em>Worldbuilding in the imagined.</em></h2>
-          <Link href="/where-the-light-falls">DISCOVER THE CREATIVE PROJECT <span aria-hidden="true">↗</span></Link>
+          <Link href="/where-the-light-falls">DISCOVER WHERE THE LIGHT FALLS <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
-      <section className="reference-about shell" id="about">
-        <span className="reference-section-index">01 / THE PERSON BEHIND THE WORK</span>
-        <div><h2>Curiosity is where<br /><em>it starts.</em></h2><p>My interests have never really stayed in one place. What started with graphic design grew into a fascination with programming, software engineering, and now machine learning.</p><p>I&apos;m especially interested in how intelligent systems learn and how those ideas might shape the things I create. I&apos;m building that knowledge one experiment and project at a time.</p></div>
-      </section>
-
-      <section className="reference-experience shell" id="experience">
-        <div className="reference-section-header"><span className="reference-section-index">02 / SELECTED EXPERIENCE</span><Link href="/engineering">EXPLORE ENGINEERING ↗</Link></div>
-        <div className="reference-experience-list">
-          <article><span>01 / BACKEND</span><div><h3>AI Infrastructure Cluster</h3><p>Contributing to backend work at Tandem-IT at HU Utrecht, with exposure to APIs, Linux, containers and GPU infrastructure for AI workloads.</p></div></article>
-          <article><span>02 / HACKATHON</span><div><h3>Digital Product Passport</h3><p>Backend APIs and data integration for a construction supply-chain prototype. Our team placed third out of nine.</p></div></article>
-          <article><span>03 / PROJECTS</span><div><h3>Groupvibe &amp; DesignAudit</h3><p>Backend and board experience at Groupvibe, alongside an independent website-auditing concept.</p></div></article>
+      <section className="portfolio-now shell" aria-labelledby="portfolio-now-title">
+        <span className="reference-section-index">01 / CURRENTLY</span>
+        <div>
+          <h2 id="portfolio-now-title">What I&apos;m <em>building now.</em></h2>
+          <p>I&apos;m a backend intern at Tandem-IT, contributing to HU Utrecht's AI Infrastructure Cluster. Alongside that work, I&apos;m building Fantasy World AI Lab while strengthening my Python, mathematics and machine learning foundations.</p>
+          <Link href="/engineering" className="portfolio-inline-link">MORE ABOUT MY ENGINEERING WORK <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
-      <section className="reference-contact shell" id="contact"><span className="reference-section-index">03 / CONNECT</span><div><h2>Let&apos;s make<br /><em>something real.</em></h2><p>Interested in my work, have an opportunity in mind, or simply want to connect?</p><div className="reference-contact-links"><a href={site.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href={site.github} target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href={`mailto:${site.email}`}>EMAIL ↗</a></div></div></section>
+      <section className="reference-contact shell" id="contact">
+        <span className="reference-section-index">02 / CONNECT</span>
+        <div>
+          <h2>Let&apos;s make<br /><em>something real.</em></h2>
+          <p>I&apos;m interested in machine learning internships, technical projects and international study opportunities.</p>
+          <div className="reference-contact-links">
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
+            <a href={site.github} target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

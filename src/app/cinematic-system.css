@@ -103,3 +103,17 @@ body{background:#0b090c;color:#f6eae0}
  background-image:linear-gradient(0deg,rgba(17,9,12,.75),transparent 52%),linear-gradient(90deg,rgba(13,9,12,.24),transparent 60%),url('/wtlf-world.png')!important;
  background-size:cover;background-position:center;
 }
+
+/* Shared navigation geometry and typography across every route. */
+.site-header .header-inner{height:100%;display:flex;align-items:center;gap:clamp(15px,2vw,32px)}
+.site-header .header-contact{height:42px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;line-height:1;white-space:nowrap;align-self:center}
+.site-header .header-contact span{font-size:17px;line-height:1;padding-left:10px}
+.site-footer .footer-external a,.site-footer .footer-external span,.reference-contact-links a{font-family:Arial,Helvetica,sans-serif}
+.engineering-intro{display:grid;grid-template-columns:.35fr 1fr;gap:50px;padding-block:58px 24px;border-bottom:1px solid rgba(222,175,151,.2)}
+.engineering-intro p{font-size:clamp(19px,2vw,25px);line-height:1.5;color:#ebd8ca;max-width:890px;margin:0}
+.engineering-intro strong{color:#e8b49b}
+.engineering-feature-note,.engineering-earlier{color:#bfa99b;line-height:1.7}
+.engineering-feature-note{margin-top:28px;font-size:13px;letter-spacing:.05em}
+.engineering-earlier{font-size:15px;margin-top:38px;max-width:850px}
+@media(max-width:850px){.engineering-intro{grid-template-columns:1fr;gap:15px;padding-top:42px}.site-header .header-contact{display:none}}
+@media(max-width:600px){.page-heading h1{font-size:clamp(46px,11vw,72px)}.site-footer .footer-external a{overflow-wrap:anywhere}}

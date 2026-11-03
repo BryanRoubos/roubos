@@ -220,3 +220,19 @@ body:has(.reference-home) .footer-bottom{padding-block:24px}
 
 /* Canonical approved image sources: hero.jpg, ThisOne.png and WTLF artwork only. */
 .reference-hero-photo{background-image:url('/hero.jpg')!important}
+
+/* Portfolio: two focused pillars and a short current-work section. */
+.reference-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.reference-card{height:clamp(420px,42vw,550px)}
+.reference-card-work .reference-card-art{background-image:url('/selected-work.png')!important;background-position:center 40%}
+.reference-card-world .reference-card-art{background-image:url('/wtlf/upper-reveal.webp')!important;background-position:center 52%}
+.reference-cinematic-photo{background-image:url('/wtlf/upper-reveal.webp')!important}
+.portfolio-now{display:grid;grid-template-columns:.38fr 1fr;gap:90px;padding-block:95px}
+.portfolio-now h2{font:normal clamp(44px,5vw,74px)/1.05 Georgia,'Times New Roman',serif;letter-spacing:-.055em;margin:0 0 20px}
+.portfolio-now h2 em{color:#e8b49b}
+.portfolio-now p{max-width:700px;color:#cbb9ae;font-size:17px;line-height:1.7}
+.portfolio-inline-link{display:inline-block;margin-top:20px;letter-spacing:.14em;font-size:11px;font-weight:700;color:#e1b093}
+.reference-contact{padding-block:80px;align-items:start}
+.reference-contact-links a{font-family:Arial,Helvetica,sans-serif;overflow-wrap:anywhere}
+@media(max-width:850px){.reference-cards{grid-template-columns:1fr;gap:16px}.portfolio-now{grid-template-columns:1fr;gap:25px;padding-block:70px}.reference-card{height:455px}}
+@media(max-width:500px){.reference-card{height:425px}.reference-card-copy{left:21px;right:20px}.reference-card h2{font-size:clamp(35px,8vw,52px)}}
