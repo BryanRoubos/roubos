@@ -10,9 +10,10 @@ export const site = {
 } as const;
 export const navigation = [
   { label: "About", href: "/#about" },
-  { label: "The ML Lab", href: "/#lab" },
-  { label: "Experience", href: "/#experience" },
+  { label: "ML Lab", href: "/#lab" },
+  { label: "Work", href: "/#experience" },
   { label: "Creative", href: "/#creative" },
+  { label: "Connect", href: "/#contact" },
 ] as const;
 export const disciplines = [
   { number: "01", eyebrow: "THE LAB", title: "Machine Learning", description: "How models learn, from the maths to the infrastructure that runs them.", href: "/engineering", cta: "Follow the path", className: "discipline-engineering" },
