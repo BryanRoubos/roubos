@@ -65,8 +65,8 @@ export function CityLearningLab(){
   const handleReset=()=>{setQ(blank());setEpisodes(0);setWins(0);};
   return <div className="city-lab">
     <div className="lab-head"><span>FIELD STUDY / 001</span><span className="lab-live"><i/> LIVE IN YOUR BROWSER</span></div>
-    <div className="lab-title"><div><span className="lab-eyebrow">FANTASY WORLD AI LAB</span><h3>Learning the crossing.</h3></div><span className="lab-version">Q-LEARNING / V0.1</span></div>
-    <p className="lab-description">A small agent learns a route through a divided city. Train it, then see how it navigates walls, checkpoints, and risky streets. The rewards and decisions are calculated—not animated placeholders.</p>
+    <div className="lab-title"><div><span className="lab-eyebrow">SEPARATE LEARNING EXERCISE</span><h3>Learning the crossing.</h3></div><span className="lab-version">Q-LEARNING / V0.1</span></div>
+    <p className="lab-description">This standalone Q-learning demonstration explores route-finding, not character personality or decision prediction. Train an agent to navigate walls, checkpoints and risky streets; its rewards and decisions are calculated in your browser.</p>
     <div className="lab-map" role="img" aria-label={`City grid. The learned route ${evaluated.success?"reaches":"does not yet reach"} the destination after ${episodes} training episodes.`}>
       {Array.from({length:W*H},(_,i)=>{
         const p={x:i%W,y:Math.floor(i/W)},type=cell(p);
@@ -80,6 +80,6 @@ export function CityLearningLab(){
     <div className="lab-legend"><span><i className="legend-start"/>Start</span><span><i className="legend-goal"/>Goal</span><span><i className="legend-check"/>Checkpoint</span><span><i className="legend-risk"/>Risk</span></div>
     <div className="lab-stats"><div><span>EPISODES COMPLETED</span><strong>{episodes.toLocaleString("en-US")}</strong></div><div><span>LAST BATCH SUCCESS</span><strong>{episodes?Math.round(wins/400*100)+"%":"—"}</strong></div><div><span>GREEDY POLICY</span><strong>{evaluated.success?"REACHES GOAL":"LEARNING"}</strong></div></div>
     <div className="lab-controls"><button type="button" onClick={handleTrain}>Train 400 episodes ↗</button><button type="button" className="lab-secondary" onClick={()=>setShowPolicy(v=>!v)} aria-pressed={showPolicy}>{showPolicy?"Hide":"Show"} learned route</button><button type="button" className="lab-secondary" onClick={handleReset}>Reset</button></div>
-    <p className="lab-note">Educational tabular Q-learning in a simplified environment. Rewards and success rates describe the agent, not my personal skill level.</p>
+    <p className="lab-note">An educational tabular Q-learning experiment, separate from the character-decision model planned for Fantasy World AI Lab. Rewards and success rates describe only this route-finding task.</p>
   </div>;
 }
