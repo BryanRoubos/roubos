@@ -2,84 +2,102 @@
 
 import { useState } from "react";
 
-type Position = { x: number; y: number };
-const W = 10, H = 7;
-const start: Position = { x: 0, y: 5 };
-const goal: Position = { x: 9, y: 1 };
-const walls = new Set(["2,0","2,1","2,2","2,3","2,5","4,3","5,3","6,3","7,3","7,4","7,5","5,0","5,1","5,2"]);
-const checkpoints = new Set(["2,4","7,2"]);
-const risks = new Set(["3,5","4,5","6,4","8,4","8,3"]);
-const deltas: Position[] = [{x:0,y:-1},{x:1,y:0},{x:0,y:1},{x:-1,y:0}];
-const key = (p: Position) => `${p.x},${p.y}`;
-const same = (a: Position,b: Position) => a.x===b.x && a.y===b.y;
-const cell = (p: Position) => same(p,start)?"start":same(p,goal)?"goal":walls.has(key(p))?"wall":checkpoints.has(key(p))?"checkpoint":risks.has(key(p))?"risk":"street";
-const move = (p: Position,a: number) => {
-  const next={x:p.x+deltas[a].x,y:p.y+deltas[a].y};
-  return next.x<0||next.y<0||next.x>=W||next.y>=H||walls.has(key(next))?p:next;
+type Choice = "help" | "question" | "refuse";
+type Character = {
+  id: string;
+  name: string;
+  role: string;
+  caution: number;
+  empathy: number;
+  trust: number;
+  goal: string;
 };
-const reward = (p: Position,n: Position) => same(n,goal)?40:same(p,n)?-5:checkpoints.has(key(n))?-5:risks.has(key(n))?-4:-1;
-const blank = () => Array.from({length: W*H},()=>[0,0,0,0]);
-const index = (p: Position) => p.y*W+p.x;
-const best = (q: number[][],p: Position) => {
-  const row=q[index(p)], maximum=Math.max(...row);
-  return [1,0,2,3].find(a=>row[a]===maximum)??0;
-};
-function evaluate(q: number[][]) {
-  let p=start, total=0;
-  const path: Position[]=[p], visits=new Map<string,number>();
-  for(let i=0;i<80;i++){
-    const next=move(p,best(q,p)); total+=reward(p,next);p=next;path.push(p);
-    if(same(p,goal)) return {path,success:true,score:total};
-    const count=(visits.get(key(p))??0)+1;visits.set(key(p),count);
-    if(count>5)break;
-  }
-  return {path,success:false,score:total};
+const characters: Character[] = [
+  { id: "keeper", name: "The Keeper", role: "Checkpoint guard", caution: 8, empathy: 4, trust: 3, goal: "Keep the checkpoint secure" },
+  { id: "runner", name: "The Runner", role: "District messenger", caution: 3, empathy: 8, trust: 6, goal: "Help people reach safety" },
+];
+const choices: { id: Choice; label: string }[] = [
+  { id: "help", label: "Offer help" },
+  { id: "question", label: "Ask questions" },
+  { id: "refuse", label: "Refuse entry" },
+];
+const clamp = (n: number) => Math.max(0, Math.min(10, n));
+function decide(character: Character, danger: number, familiarity: number) {
+  // Transparent, hand-written rules. No trained ML model is involved.
+  const help = character.empathy * 1.5 + familiarity * 1.2 + character.trust * .5 - danger * 1.2;
+  const question = character.caution * 1.1 + (10 - familiarity) * .5 + danger * .4;
+  const refuse = character.caution * .7 + danger * 1.4 - character.empathy * .55 - familiarity * .7;
+  const scores = { help, question, refuse };
+  const ranked = choices.map(choice => ({ ...choice, score: scores[choice.id] }))
+    .sort((a, b) => b.score - a.score);
+  const winner = ranked[0];
+  const reasons = [
+    character.empathy >= 7 ? "High empathy increases willingness to help." : "Empathy contributes to the choice.",
+    character.caution >= 7 ? "High caution makes the character more reluctant to act immediately." : "Caution affects how quickly the character acts.",
+    familiarity >= 7 ? "The stranger is familiar, which makes helping more attractive." : familiarity <= 3 ? "The stranger is unfamiliar, increasing uncertainty." : "Some familiarity adds context.",
+    danger >= 7 ? "The situation appears dangerous, increasing caution and refusal." : danger <= 3 ? "The situation seems relatively safe." : "Risk remains part of the decision.",
+  ];
+  return { winner, ranked, reasons };
 }
-function train(q: number[][],count: number){
-  let wins=0;
-  for(let episode=0;episode<count;episode++){
-    let p=start;
-    const epsilon=Math.max(0.07,0.8*Math.exp(-episode/65));
-    for(let step=0;step<95;step++){
-      const a=Math.random()<epsilon?Math.floor(Math.random()*4):best(q,p);
-      const next=move(p,a),r=reward(p,next),done=same(next,goal);
-      q[index(p)][a]+=0.24*(r+(done?0:0.95*Math.max(...q[index(next)]))-q[index(p)][a]);
-      p=next;
-      if(done){wins++;break;}
-    }
-  }
-  return wins;
-}
-export function CityLearningLab(){
-  const [q,setQ]=useState<number[][]>(()=>blank());
-  const [episodes,setEpisodes]=useState(0);
-  const [wins,setWins]=useState(0);
-  const [showPolicy,setShowPolicy]=useState(false);
-  const evaluated=evaluate(q);
-  const route=new Set(evaluated.path.map(key));
-  const handleTrain=()=>{
-    const updated=q.map(row=>[...row]);
-    const result=train(updated,400);
-    setQ(updated);setEpisodes(episodes+400);setWins(result);
-  };
-  const handleReset=()=>{setQ(blank());setEpisodes(0);setWins(0);};
-  return <div className="city-lab">
-    <div className="lab-head"><span>FIELD STUDY / 001</span><span className="lab-live"><i/> LIVE IN YOUR BROWSER</span></div>
-    <div className="lab-title"><div><span className="lab-eyebrow">SEPARATE LEARNING EXERCISE</span><h3>Learning the crossing.</h3></div><span className="lab-version">Q-LEARNING / V0.1</span></div>
-    <p className="lab-description">This standalone Q-learning demonstration explores route-finding, not character personality or decision prediction. Train an agent to navigate walls, checkpoints and risky streets; its rewards and decisions are calculated in your browser.</p>
-    <div className="lab-map" role="img" aria-label={`City grid. The learned route ${evaluated.success?"reaches":"does not yet reach"} the destination after ${episodes} training episodes.`}>
-      {Array.from({length:W*H},(_,i)=>{
-        const p={x:i%W,y:Math.floor(i/W)},type=cell(p);
-        const active=route.has(key(p))&&type!=="wall";
-        return <div key={i} className={`lab-cell lab-${type} ${active&&showPolicy?"lab-route":""}`} title={`${type}: ${p.x}, ${p.y}`}>
-          {type==="start"?"S":type==="goal"?"G":type==="checkpoint"?"◇":type==="risk"?"·":null}
-          {active&&showPolicy&&type==="street"?<span className="route-point"/>:null}
-        </div>;
-      })}
-    </div>
-    <div className="lab-legend"><span><i className="legend-start"/>Start</span><span><i className="legend-goal"/>Goal</span><span><i className="legend-check"/>Checkpoint</span><span><i className="legend-risk"/>Risk</span></div>
-    <div className="lab-stats"><div><span>EPISODES COMPLETED</span><strong>{episodes.toLocaleString("en-US")}</strong></div><div><span>LAST BATCH SUCCESS</span><strong>{episodes?Math.round(wins/400*100)+"%":"—"}</strong></div><div><span>GREEDY POLICY</span><strong>{evaluated.success?"REACHES GOAL":"LEARNING"}</strong></div></div>
-    <div className="lab-controls"><button type="button" onClick={handleTrain}>Train 400 episodes ↗</button><button type="button" className="lab-secondary" onClick={()=>setShowPolicy(v=>!v)} aria-pressed={showPolicy}>{showPolicy?"Hide":"Show"} learned route</button><button type="button" className="lab-secondary" onClick={handleReset}>Reset</button></div>
-    <p className="lab-note">An educational tabular Q-learning experiment, separate from the character-decision model planned for Fantasy World AI Lab. Rewards and success rates describe only this route-finding task.</p>
-  </div>;
+
+export function CityLearningLab() {
+  const [selected, setSelected] = useState(characters[0].id);
+  const [danger, setDanger] = useState(5);
+  const [familiarity, setFamiliarity] = useState(3);
+  const [run, setRun] = useState(1);
+  const character = characters.find(c => c.id === selected) ?? characters[0];
+  const result = decide(character, danger, familiarity);
+  return (
+    <section className="city-lab character-lab" aria-label="Interactive character decision simulation">
+      <div className="lab-head"><span>FIELD STUDY / 001</span><span className="lab-live"><i /> RUNS IN YOUR BROWSER</span></div>
+      <div className="lab-title">
+        <div><span className="lab-eyebrow">FANTASY WORLD AI LAB / RULE-BASED PROTOTYPE</span><h3>Same situation. Different choices.</h3></div>
+        <span className="lab-version">SIMULATION / V0.1</span>
+      </div>
+      <p className="lab-description">A stranger asks to pass through a checkpoint. Change the character and the circumstances to see how explicit decision rules affect the outcome. The characters and attributes below are synthetic examples, not established story canon.</p>
+      <div className="character-lab-grid">
+        <div className="character-lab-panel">
+          <span className="character-lab-label">01 / CHARACTER</span>
+          <label className="character-lab-field">Choose a character
+            <select value={selected} onChange={e => { setSelected(e.target.value); setRun(n => n + 1); }}>
+              {characters.map(c => <option key={c.id} value={c.id}>{c.name} — {c.role}</option>)}
+            </select>
+          </label>
+          <p className="character-lab-goal"><span>GOAL</span>{character.goal}</p>
+          <dl className="character-lab-traits">
+            <div><dt>Caution</dt><dd>{character.caution}/10</dd><meter min="0" max="10" value={character.caution} aria-label="Caution" /></div>
+            <div><dt>Empathy</dt><dd>{character.empathy}/10</dd><meter min="0" max="10" value={character.empathy} aria-label="Empathy" /></div>
+            <div><dt>Trust</dt><dd>{character.trust}/10</dd><meter min="0" max="10" value={character.trust} aria-label="Trust" /></div>
+          </dl>
+        </div>
+        <div className="character-lab-panel">
+          <span className="character-lab-label">02 / SITUATION</span>
+          <p className="character-lab-scenario">A stranger approaches the checkpoint and asks for help crossing to the other district.</p>
+          <label className="character-lab-field">Perceived danger <strong>{danger}/10</strong>
+            <input type="range" min="0" max="10" step="1" value={danger} onChange={e => setDanger(clamp(Number(e.target.value)))} />
+          </label>
+          <label className="character-lab-field">Familiarity with stranger <strong>{familiarity}/10</strong>
+            <input type="range" min="0" max="10" step="1" value={familiarity} onChange={e => setFamiliarity(clamp(Number(e.target.value)))} />
+          </label>
+          <button className="character-lab-action" type="button" onClick={() => setRun(n => n + 1)}>Simulate decision ↗</button>
+        </div>
+        <div className="character-lab-panel character-lab-result">
+          <span className="character-lab-label">03 / DECISION · RUN {run}</span>
+          <div aria-live="polite"><span className="character-lab-result-caption">RULE-BASED CHOICE</span><h4>{result.winner.label}</h4></div>
+          <p className="character-lab-why">The action with the highest score under the current hand-written rules.</p>
+          <div className="character-lab-options">{result.ranked.map(c => (
+            <div key={c.id} className={c.id === result.winner.id ? "character-lab-option chosen" : "character-lab-option"}>
+              <span>{c.label}</span><strong>{c.score.toFixed(1)}</strong>
+            </div>
+          ))}</div>
+        </div>
+      </div>
+      <div className="character-lab-explain">
+        <span className="character-lab-label">WHY THIS HAPPENED</span>
+        <ul>{result.reasons.map(reason => <li key={reason}>{reason}</li>)}</ul>
+        <p>These scores come from an understandable rule system, not measured probabilities. The next steps in my ML roadmap are to generate decision datasets, train predictive models and compare them against these rules.</p>
+      </div>
+      <p className="lab-note">Demonstration uses fictional sample profiles and deterministic scoring. No trained machine-learning model, personality inference, or real-time learning is claimed.</p>
+    </section>
+  );
 }
