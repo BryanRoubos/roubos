@@ -1,7 +1,3 @@
-const Loading = () => {
-    return (
-        <div>Loading</div>
-    )
+export default function Loading() {
+  return <div className="shell loading-state" role="status" aria-live="polite">Loading page…</div>;
 }
-
-export default Loading;

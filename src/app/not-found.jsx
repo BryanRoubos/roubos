@@ -1,13 +1,4 @@
-import Link from 'next/link'
-
-const NotFound = () => {
-    return (
-        <div>
-            <h2>Not Found</h2>
-            <p>Sorry, the page you are looking for does not exist.</p>
-            <Link href="/">Return Home</Link>
-        </div>
-    )
+import Link from "next/link";
+export default function NotFound() {
+  return <section className="not-found shell"><span className="eyebrow">404 / NOT FOUND</span><h1>This path goes<br /><em>nowhere yet.</em></h1><p>The page you&apos;re looking for isn&apos;t here.</p><Link href="/" className="button button-primary">Return home ↗</Link></section>;
 }
-
-export default NotFound;
