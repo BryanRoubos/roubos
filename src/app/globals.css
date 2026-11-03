@@ -543,3 +543,13 @@ em { font-family: var(--serif); font-weight: 400; }
 .character-lab-explain p{font-size:12px;color:#a3bdbc;margin-bottom:0;max-width:850px}
 @media(max-width:900px){.character-lab-grid{grid-template-columns:1fr 1fr}.character-lab-result{grid-column:1/-1}}
 @media(max-width:600px){.character-lab-grid,.character-lab-explain ul{grid-template-columns:1fr}.character-lab-result{grid-column:auto}.character-lab-scenario{min-height:0}}
+
+/* Original fiction draft: deliberately tucked behind an accessible disclosure */
+.chapter-draft-disclaimer{color:var(--muted);max-width:330px;font-size:14px}
+.chapter-draft-reader{border:1px solid var(--line-strong);background:var(--bg-soft)}
+.chapter-draft-reader summary{display:flex;justify-content:space-between;gap:16px;align-items:center;cursor:pointer;min-height:56px;padding:17px 22px;color:var(--ink);font-weight:700}
+.chapter-draft-reader[open] summary{border-bottom:1px solid var(--line-strong)}
+.chapter-draft-body{padding:clamp(20px,4vw,48px);max-width:78ch;margin-inline:auto;font-family:Georgia,serif}
+.chapter-draft-body h2{font-size:clamp(27px,4vw,40px);margin-bottom:20px}
+.chapter-draft-body h3{font-size:clamp(18px,3vw,25px);margin:14px 0 26px}
+.chapter-draft-body p{font-size:clamp(16px,1.7vw,19px);line-height:1.9;margin-bottom:1.45em;white-space:pre-line}
