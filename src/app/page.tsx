@@ -61,7 +61,7 @@ export default function Home() {
         <span className="reference-section-index">01 / CURRENTLY</span>
         <div>
           <h2 id="portfolio-now-title">What I&apos;m <em>building now.</em></h2>
-          <p>I&apos;m a backend intern at Tandem-IT, contributing to HU Utrecht's AI Infrastructure Cluster. Alongside that work, I&apos;m building Fantasy World AI Lab while strengthening my Python, mathematics and machine learning foundations.</p>
+          <p>I&apos;m a backend intern at Tandem-IT, contributing to HU Utrecht&apos;s AI Infrastructure Cluster. Alongside that work, I&apos;m building Fantasy World AI Lab while strengthening my Python, mathematics and machine learning foundations.</p>
           <Link href="/engineering" className="portfolio-inline-link">MORE ABOUT MY ENGINEERING WORK <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
