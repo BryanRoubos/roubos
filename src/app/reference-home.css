@@ -4,13 +4,6 @@
   color:var(--ref-ink);background:#0b0a0c;overflow:hidden;font-family:Arial,Helvetica,sans-serif
 }
 body:has(.reference-home){background:#0b0a0c}
-body:has(.reference-home) .site-header{height:70px;border:0;background:#0c0a0d;color:#f7e7db}
-body:has(.reference-home) .site-header .shell{max-width:1480px}
-body:has(.reference-home) .brand-monogram{font:normal 34px/.95 Georgia,'Times New Roman',serif;letter-spacing:-.17em;color:#f7e0ca}
-body:has(.reference-home) .brand-name{font-weight:600;letter-spacing:.33em;line-height:1.5;padding-left:22px;font-size:9px;border-left:1px solid rgba(234,196,174,.5)}
-body:has(.reference-home) .desktop-nav a{font-size:10px;letter-spacing:.2em;font-weight:700;text-transform:uppercase;color:#f3ddcc}
-body:has(.reference-home) .header-contact{font-size:10px;letter-spacing:.18em;font-weight:700;border:1px solid #bd9987;border-radius:50px;padding:13px 24px}
-body:has(.reference-home) .header-contact span{font-size:17px}
 .reference-home .shell{max-width:1480px}
 .reference-home a:focus-visible{outline:2px solid #f2c2a1;outline-offset:5px}
 .reference-hero{isolation:isolate;position:relative;min-height:560px;background:radial-gradient(ellipse at 35% 89%,rgba(104,19,27,.36),transparent 51%),#0b0a0c}
@@ -91,7 +84,6 @@ body:has(.reference-home) .footer-bottom{padding-block:24px}
  .reference-about,.reference-contact,.reference-experience-list article{gap:50px}
 }
 @media(max-width:780px){
- body:has(.reference-home) .site-header{height:72px}
  .reference-hero{min-height:720px}
  .reference-hero-shell{min-height:720px;align-items:end}
  .reference-hero-photo{width:100%;height:430px;right:0;top:0;bottom:auto;background-position:center 29%;mask-image:linear-gradient(to bottom,#000 40%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 40%,transparent 100%);opacity:.91}
