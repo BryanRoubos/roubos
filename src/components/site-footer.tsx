@@ -18,7 +18,7 @@ export function SiteFooter() {
      <a href={`mailto:${site.email}`}>{site.email}</a>
     </div>
    </div>
-   <div className="footer-legal"><span>© {new Date().getFullYear()} Bryan Roubos</span><span>Software engineering and original storytelling.</span><a href="/#top">BACK TO TOP</a></div>
+   <div className="footer-legal"><span>© {new Date().getFullYear()} Bryan Roubos</span><span>Software engineering and original storytelling.</span><Link href="/#top">BACK TO TOP</Link></div>
   </div>
  </footer>;
 }

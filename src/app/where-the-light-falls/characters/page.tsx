@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function Characters() {
   return <div className="world-page">
-    <header className="wtlf-page-header shell"><span className="eyebrow">WHERE THE LIGHT FALLS / CHARACTERS</span><h1>The people <em>behind the city.</em></h1><p>A brother still searching, a sister who wanted to travel, and the people whose lives cross theirs. These public introductions keep the story's secrets intact.</p></header>
+    <header className="wtlf-page-header shell"><span className="eyebrow">WHERE THE LIGHT FALLS / CHARACTERS</span><h1>The people <em>behind the city.</em></h1><p>A brother still searching, a sister who wanted to travel, and the people whose lives cross theirs. These public introductions keep the story&apos;s secrets intact.</p></header>
     <WtlfNavigation />
     <div className="wtlf-content shell">
       {loreEntries.filter(e=>e.type==="Character").map((character,index)=>{
