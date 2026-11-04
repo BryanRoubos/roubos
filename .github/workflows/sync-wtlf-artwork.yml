@@ -1,0 +1,50 @@
+name: Sync approved Where the Light Falls artwork
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sync-wtlf-artwork.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Copy creator-approved source artwork into the portfolio
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_ref="461849bb3f6f437286f5c2d77cce66df2165dbc1"
+          base="https://raw.githubusercontent.com/BryanRoubos/where-the-light-falls-site/$source_ref"
+          copy_image() {
+            local source_path="$1" dest_path="$2"
+            mkdir -p "$(dirname "$dest_path")"
+            curl --fail --location --retry 4 --retry-delay 2 --silent --show-error "$base/$source_path" -o "$dest_path"
+            test "$(wc -c < "$dest_path")" -gt 10000
+            echo "Copied $dest_path"
+          }
+          copy_image "assets/images/chapters/chapter-one-not-enough.png" "public/wtlf/chapters/chapter-one-not-enough.png"
+          copy_image "assets/images/chapters/chapter-one-well-the-knot-held.png" "public/wtlf/chapters/chapter-one-well-the-knot-held.png"
+          copy_image "assets/images/chapters/chapter-one-a-better-question.png" "public/wtlf/chapters/chapter-one-a-better-question.png"
+          copy_image "assets/images/districts/deepwater-working-waterfront.png" "public/wtlf/deepwater-waterfront.png"
+          copy_image "assets/images/districts/middle-heights-neighborhood-web.webp" "public/wtlf/middle-neighborhood.webp"
+          copy_image "assets/images/districts/upper-heights-to-upper-city-web.webp" "public/wtlf/upper-heights.webp"
+          copy_image "assets/images/characters/unnamed-workshop-figure-web.webp" "public/wtlf/workshop-figure.webp"
+          copy_image "assets/images/districts/novel-social.webp" "public/wtlf/novel-social.webp"
+          copy_image "assets/images/characters/elias-varek-home.webp" "public/wtlf/elias-home.webp"
+      - name: Commit synced assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/wtlf
+          if ! git diff --cached --quiet; then
+            git commit -m "Add approved original novel and world artwork"
+            git push origin HEAD:main
+          fi

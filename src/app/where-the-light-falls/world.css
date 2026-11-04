@@ -54,3 +54,37 @@
 .world-page .world-hero-actions .world-text-link{min-height:44px;display:inline-flex;align-items:center}
 .world-page .chapter-reading h2,.world-page .chapter-reading h3{scroll-margin-top:80px}
 @media(max-width:600px){.world-page .reference-primary{max-width:100%}.world-page .world-hero-copy{padding-inline:0}}
+
+/* Chapter One: a readable manuscript, with approved art at the original story beats. */
+.chapter-page{--reader-font:19px}
+.chapter-reading-time{display:block;margin-top:24px;color:#bba699;font:700 10px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.16em}
+.chapter-reading-shell{background:#e9ded0;color:#281d1a;border-block:1px solid rgba(55,34,30,.16)}
+.chapter-reading-inner{max-width:850px;margin:0 auto;padding:58px 28px 90px}
+.chapter-page .chapter-reading{max-width:700px;padding:38px 0 0;margin:0 auto;color:#322923;font:normal var(--reader-font)/1.9 Georgia,"Times New Roman",serif;letter-spacing:.005em}
+.chapter-page .chapter-reading p{margin:0 0 1.38em;color:inherit}
+.chapter-page .chapter-reading h2,.chapter-page .chapter-reading h3{color:inherit}
+.chapter-reading-controls{display:flex;justify-content:space-between;align-items:center;gap:22px;max-width:700px;margin:0 auto;border-block:1px solid rgba(57,39,30,.23);padding:16px 0;color:#4d3b33}
+.chapter-reading-controls>span{font:700 10px/1.4 Arial,Helvetica,sans-serif;letter-spacing:.17em}
+.chapter-reading-controls>div{display:flex;gap:8px;flex-wrap:wrap}
+.chapter-reading-controls button{border:1px solid rgba(66,44,37,.35);border-radius:3px;min-height:42px;min-width:45px;padding:10px 14px;color:inherit;background:transparent;font:700 11px Arial,Helvetica,sans-serif;cursor:pointer}
+.chapter-reading-controls button:hover:not(:disabled),.chapter-reading-controls button:focus-visible{background:rgba(67,45,36,.1)}
+.chapter-reading-controls button:focus-visible{outline:2px solid #9c654e;outline-offset:3px}
+.chapter-reading-controls button:disabled{opacity:.4;cursor:not-allowed}
+.chapter-inline-art{max-width:570px;margin:65px auto 70px;text-align:center}
+.chapter-inline-art img{display:block;width:100%;height:auto;max-height:700px;object-fit:contain;border:1px solid rgba(61,39,30,.16)}
+.chapter-inline-art figcaption{font:italic 15px/1.5 Georgia,serif;margin-top:15px;color:#6d5347}
+.chapter-page.night-reader .chapter-reading-shell{background:#181317;color:#ead7c8}
+.chapter-page.night-reader .chapter-reading{color:#ead7c8}
+.chapter-page.night-reader .chapter-reading-controls{color:#ead7c8;border-color:rgba(225,185,158,.28)}
+.chapter-page.night-reader .chapter-reading-controls button{border-color:rgba(225,185,158,.35)}
+.chapter-page.night-reader .chapter-inline-art figcaption{color:#c1a99b}
+.chapter-page .chapter-return>p{color:#c9b6aa;font-family:Georgia,serif;font-size:21px;margin-bottom:23px}
+@media(max-width:600px){
+ .chapter-reading-inner{padding:30px 23px 65px}
+ .chapter-page .chapter-reading{padding-top:30px;font-size:var(--reader-font);line-height:1.78}
+ .chapter-reading-controls{align-items:flex-start;flex-direction:column;gap:12px}
+ .chapter-inline-art{margin:44px -8px 46px}
+ .chapter-inline-art img{max-height:530px}
+ .chapter-heading{padding-bottom:35px}
+}
+@media(prefers-reduced-motion:reduce){.chapter-reading-controls button{transition:none}}

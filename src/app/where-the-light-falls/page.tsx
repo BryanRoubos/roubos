@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const districts = [
   { name: "The Upper City", detail: "Markets, institutions, wealth and the sunlight high above the canyon.", image: "/wtlf/upper-reveal.webp", alt: "The Upper City rises above the canyon with grand buildings and terraces." },
   { name: "Middle Heights", detail: "A crowded network of steep streets, homes and workshops built into the cliff.", image: "/wtlf/middle-heights.webp", alt: "Dense buildings and narrow passages of the Middle Heights overlooking the gorge." },
-  { name: "Deepwater", detail: "The working waterfront beneath the city. Mist, cargo and the rhythms of daily life.", image: "/wtlf/maren-harbour.webp", alt: "Deepwater's working harbour beneath the towering canyon walls." }
+  { name: "Deepwater", detail: "The working waterfront beneath the city. Mist, cargo and the rhythms of daily life.", image: "/wtlf/deepwater-waterfront.png", alt: "Deepwater's working harbour beneath the towering canyon walls." }
 ];
 
 const characters = [
@@ -60,7 +60,7 @@ export default function WhereTheLightFalls() {
     </div></div></section>
   <section className="section-space world-chapter-preview" id="chapter-one"><div className="shell world-preview-grid">
     <div><span className="eyebrow">05 / FROM THE MANUSCRIPT</span><h2>Chapter One.<br /><em>The opening.</em></h2><p className="world-excerpt">Elias Varek had carried heavier things through the Lower City. Few of them had been packed badly enough to strike back.</p><p>Read the opening chapter of the novel, shared directly from the original reader manuscript.</p><Link className="reference-primary" href="/where-the-light-falls/chapter-one">READ CHAPTER ONE <span aria-hidden="true">→</span></Link></div>
-    <Image unoptimized src="https://bryanroubos.github.io/where-the-light-falls-site/assets/images/chapters/chapter-one-a-better-question.png" alt="Atmospheric illustrated scene from Chapter One of Where the Light Falls." width={941} height={1672} sizes="(max-width: 850px) 100vw, 42vw" />
+    <Image unoptimized src="/wtlf/chapters/chapter-one-not-enough.png" alt="Atmospheric illustrated scene from Chapter One of Where the Light Falls." width={941} height={1672} sizes="(max-width: 850px) 100vw, 42vw" />
   </div></section>
   <section className="next-page"><div className="shell"><span>THE ENGINEERING CONNECTION</span><Link href="/engineering">Fantasy World AI Lab <span aria-hidden="true">↗</span></Link></div></section>
  </div>;
