@@ -117,3 +117,11 @@ body{background:#0b090c;color:#f6eae0}
 .engineering-earlier{font-size:15px;margin-top:38px;max-width:850px}
 @media(max-width:850px){.engineering-intro{grid-template-columns:1fr;gap:15px;padding-top:42px}.site-header .header-contact{display:none}}
 @media(max-width:600px){.page-heading h1{font-size:clamp(46px,11vw,72px)}.site-footer .footer-external a{overflow-wrap:anywhere}}
+
+/* The homepage owns the only contact invitation. Footer is navigation only. */
+.site-footer-compact .footer-bottom{padding-block:34px;min-height:104px}
+.site-footer-compact .footer-legal{padding-block:22px}
+@media(max-width:600px){
+  .site-footer-compact .footer-bottom{padding-block:28px;min-height:0}
+  .site-footer-compact .footer-legal{padding-block:20px}
+}
