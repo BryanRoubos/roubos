@@ -69,11 +69,12 @@ export default function ChapterOne() {
             </Fragment>;
           })}
         </article>
+        <nav className="chapter-finish" aria-label="After Chapter One">
+          <span className="chapter-finish-rule" aria-hidden="true">✦</span>
+          <p className="chapter-finish-title">End of Chapter One</p>
+          <Link href="/where-the-light-falls" className="chapter-finish-link">Return to Where the Light Falls <span aria-hidden="true">→</span></Link>
+        </nav>
       </div>
     </section>
-    <div className="chapter-return shell">
-      <p>You&apos;ve reached the end of Chapter One.</p>
-      <Link className="reference-primary" href="/where-the-light-falls">RETURN TO THE WORLD</Link>
-    </div>
   </div>;
 }

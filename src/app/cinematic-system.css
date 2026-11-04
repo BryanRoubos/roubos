@@ -125,3 +125,39 @@ body{background:#0b090c;color:#f6eae0}
   .site-footer-compact .footer-bottom{padding-block:28px;min-height:0}
   .site-footer-compact .footer-legal{padding-block:20px}
 }
+
+
+/* Responsive layout consistency across the portfolio and story pages. */
+html{scroll-padding-top:88px}
+main{min-width:0}
+main section,main article,main .shell{min-width:0}
+main h1,main h2,main h3{max-width:100%}
+.site-footer-compact .footer-bottom{gap:clamp(20px,4vw,55px)}
+.site-footer-compact .footer-bottom nav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(14px,2vw,32px);min-width:0}
+.site-footer-compact .footer-bottom nav a{line-height:1.5;white-space:normal}
+.site-footer-compact .footer-legal{row-gap:12px}
+.next-page>div{flex-wrap:wrap;padding-block:40px;gap:20px 50px}
+.next-page a{overflow-wrap:anywhere}
+.site-header .header-contact{flex-shrink:0}
+@media(max-width:1050px){
+ .site-footer-compact .footer-bottom{flex-wrap:wrap}
+ .site-footer-compact .footer-bottom nav{justify-content:flex-start;gap:18px 28px}
+}
+@media(max-width:850px){
+ .site-footer-compact .footer-bottom{align-items:center}
+ .site-footer-compact .footer-bottom nav{width:100%;order:3}
+ .next-page>div{align-items:flex-start;min-height:0;flex-direction:column}
+ .next-page a{font-size:clamp(33px,7vw,62px);line-height:1.12}
+ .page-heading h1{overflow-wrap:break-word}
+}
+@media(max-width:600px){
+ html{scroll-padding-top:76px}
+ .site-footer-compact .footer-bottom nav{gap:13px 24px}
+ .site-footer-compact .footer-bottom nav a{font-size:12px}
+ .site-footer-compact .footer-legal{gap:9px 18px}
+ .site-footer-compact .footer-legal>*{line-height:1.6}
+ .section-space{padding-block:clamp(48px,12vw,72px)}
+ .two-column-section{gap:25px}
+ .career-entry{min-width:0}
+ .next-page a{font-size:clamp(32px,9vw,48px)}
+}

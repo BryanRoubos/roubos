@@ -150,3 +150,35 @@
 @media(max-width:850px){.world-spotlight,.wtlf-profile,.wtlf-atlas-entry,.wtlf-article{grid-template-columns:1fr}.world-spotlight>img{height:460px}.wtlf-profile:nth-child(even) .wtlf-profile-art{order:0}.wtlf-profile-art img{height:auto;max-height:620px}.wtlf-article>figure{position:static;max-width:620px}.wtlf-atlas-entry{gap:22px;margin-bottom:55px;padding-bottom:55px}.wtlf-page-header{padding-top:85px}}
 @media(max-width:650px){.wtlf-local-nav{gap:10px 18px;padding-block:16px}.wtlf-local-nav a{font-size:9px}.wtlf-character-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.wtlf-character-teaser img{height:280px}.wtlf-lore-grid{grid-template-columns:1fr}.wtlf-lore-card{min-height:190px;padding:24px}.wtlf-profile{padding-block:40px}.wtlf-page-header{padding-top:65px;padding-bottom:38px}.world-spotlight>img{height:400px}.wtlf-article{padding-block:50px 80px}.wtlf-page-header h1{font-size:clamp(50px,12vw,75px)}}
 @media(max-width:390px){.wtlf-character-teaser img{height:200px}.wtlf-local-nav{gap:5px 14px}.wtlf-local-nav a{font-size:9px}}
+
+
+/* Chapter ending lives inside the reading surface, not as a detached CTA. */
+.chapter-page .chapter-reading-inner{padding-bottom:clamp(48px,7vw,100px)}
+.chapter-page .chapter-reading{padding-bottom:clamp(18px,3vw,34px)}
+.chapter-finish{max-width:700px;margin:0 auto;padding:clamp(25px,4vw,55px) 16px 0;text-align:center;border-top:1px solid rgba(67,45,36,.2)}
+.chapter-finish-rule{display:block;color:#96715d;font:normal 22px/1 Georgia,serif;margin-bottom:15px}
+.chapter-finish-title{color:#4b3730;margin:0 0 16px;font:italic clamp(22px,3.5vw,32px)/1.3 Georgia,serif}
+.chapter-finish-link{display:inline-flex;align-items:center;justify-content:center;gap:11px;min-height:44px;padding:8px 4px;color:#6d3e35;text-decoration:none;border-bottom:1px solid rgba(109,62,53,.45);font:700 12px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.08em}
+.chapter-finish-link:hover{color:#2e1a17;border-bottom-color:currentColor}
+.chapter-finish-link:focus-visible{outline:2px solid #8a4d3c;outline-offset:4px}
+.chapter-page.night-reader .chapter-finish{border-color:rgba(225,185,158,.28)}
+.chapter-page.night-reader .chapter-finish-rule,.chapter-page.night-reader .chapter-finish-title{color:#dec3af}
+.chapter-page.night-reader .chapter-finish-link{color:#e7b59a;border-color:rgba(225,185,158,.45)}
+.chapter-page .chapter-heading{padding-top:clamp(46px,6vw,78px);padding-bottom:clamp(32px,4vw,52px)}
+.chapter-page .chapter-heading .eyebrow{margin-top:clamp(32px,4vw,56px)}
+.chapter-page .chapter-heading h1{overflow-wrap:break-word}
+.chapter-reading-shell,.chapter-page .chapter-reading,.chapter-reading-inner{min-width:0}
+.chapter-page .chapter-reading{overflow-wrap:break-word}
+@media(max-width:600px){
+ .chapter-page .chapter-heading{padding-top:36px;padding-bottom:29px}
+ .chapter-page .chapter-heading .eyebrow{margin-top:31px}
+ .chapter-page .chapter-heading h1{font-size:clamp(53px,13vw,78px);line-height:1}
+ .chapter-reading-inner{padding:25px clamp(18px,5vw,25px) 48px}
+ .chapter-page .chapter-reading{padding-top:28px;line-height:1.75}
+ .chapter-reading-controls{gap:15px}
+ .chapter-reading-controls>div{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .chapter-reading-controls button{min-width:0;padding:10px 6px}
+ .chapter-inline-art{margin:38px auto 40px;max-width:100%}
+ .chapter-finish{padding-top:30px}
+ .chapter-finish-link{letter-spacing:.02em;font-size:12px}
+}
