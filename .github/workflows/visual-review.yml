@@ -24,6 +24,9 @@ jobs:
           npx playwright@1.58.2 screenshot --browser chromium --viewport-size "1440,900" --full-page --wait-for-timeout 1500 http://localhost:3000/ screenshots/home-desktop.png
           npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/engineering screenshots/engineering-mobile.png
           npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/where-the-light-falls screenshots/wtlf-mobile.png
+          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "390,844" --full-page --wait-for-timeout 1500 http://localhost:3000/where-the-light-falls/chapter-one screenshots/chapter-one-mobile.png
+          npx playwright@1.58.2 screenshot --browser chromium --viewport-size "1440,900" --full-page --wait-for-timeout 1500 http://localhost:3000/where-the-light-falls/chapter-one screenshots/chapter-one-desktop.png
+          for asset in chapter-one-not-enough.png chapter-one-well-the-knot-held.png chapter-one-a-better-question.png; do curl -fsS -o /dev/null "http://localhost:3000/wtlf/chapters/$asset"; done
       - uses: actions/upload-artifact@v4
         with:
           name: portfolio-visual-review
