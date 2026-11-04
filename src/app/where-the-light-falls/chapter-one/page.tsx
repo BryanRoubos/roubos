@@ -72,7 +72,7 @@ export default function ChapterOne() {
       </div>
     </section>
     <div className="chapter-return shell">
-      <p>You've reached the end of Chapter One.</p>
+      <p>You&apos;ve reached the end of Chapter One.</p>
       <Link className="reference-primary" href="/where-the-light-falls">RETURN TO THE WORLD <span aria-hidden="true">↗</span></Link>
     </div>
   </div>;

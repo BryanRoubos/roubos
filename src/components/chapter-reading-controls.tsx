@@ -7,13 +7,16 @@ export function ChapterReadingControls() {
   const [night, setNight] = useState(false);
 
   useEffect(() => {
-    try {
-      const preference = JSON.parse(localStorage.getItem("wtlf-reader") || "{}");
-      if (typeof preference.size === "number") setSize(Math.max(17, Math.min(26, preference.size)));
-      if (typeof preference.night === "boolean") setNight(preference.night);
-    } catch {
-      // Reading preferences are optional.
-    }
+    const frame = window.requestAnimationFrame(() => {
+      try {
+        const preference = JSON.parse(localStorage.getItem("wtlf-reader") || "{}");
+        if (typeof preference.size === "number") setSize(Math.max(17, Math.min(26, preference.size)));
+        if (typeof preference.night === "boolean") setNight(preference.night);
+      } catch {
+        // Reading preferences are optional.
+      }
+    });
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   useEffect(() => {
@@ -21,17 +24,28 @@ export function ChapterReadingControls() {
     if (!(chapter instanceof HTMLElement)) return;
     chapter.style.setProperty("--reader-font", size + "px");
     chapter.classList.toggle("night-reader", night);
-    try { localStorage.setItem("wtlf-reader", JSON.stringify({ size, night })); } catch {
-      // Reader remains functional without storage.
-    }
   }, [size, night]);
+
+  function changeSize(next: number) {
+    const value = Math.max(17, Math.min(26, next));
+    setSize(value);
+    try { localStorage.setItem("wtlf-reader", JSON.stringify({ size: value, night })); } catch {}
+  }
+
+  function toggleNight() {
+    setNight(value => {
+      const next = !value;
+      try { localStorage.setItem("wtlf-reader", JSON.stringify({ size, night: next })); } catch {}
+      return next;
+    });
+  }
 
   return <div className="chapter-reading-controls" aria-label="Reading preferences">
     <span>READING SETTINGS</span>
     <div>
-      <button type="button" aria-label="Decrease text size" disabled={size <= 17} onClick={() => setSize(value => Math.max(17, value - 1))}>A−</button>
-      <button type="button" aria-label="Increase text size" disabled={size >= 26} onClick={() => setSize(value => Math.min(26, value + 1))}>A+</button>
-      <button type="button" aria-pressed={night} onClick={() => setNight(value => !value)}>{night ? "DAY MODE" : "NIGHT MODE"}</button>
+      <button type="button" aria-label="Decrease text size" disabled={size <= 17} onClick={() => changeSize(size - 1)}>A−</button>
+      <button type="button" aria-label="Increase text size" disabled={size >= 26} onClick={() => changeSize(size + 1)}>A+</button>
+      <button type="button" aria-pressed={night} onClick={toggleNight}>{night ? "DAY MODE" : "NIGHT MODE"}</button>
     </div>
   </div>;
 }
