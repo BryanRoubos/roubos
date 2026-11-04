@@ -1,0 +1,46 @@
+name: Deploy portfolio to Cloudflare
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: portfolio-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Verify Cloudflare deployment credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Production NOT deployed. Add GitHub Actions secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID in repository Settings > Secrets and variables > Actions, or configure Cloudflare Git integration."
+            exit 1
+          fi
+      - run: npm ci
+      - run: npm run lint
+      - name: Deploy configured Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npm run deploy:vinext
+      - name: Verify public website has the latest public story routes
+        run: |
+          set -euo pipefail
+          for route in / /engineering /where-the-light-falls /where-the-light-falls/characters /where-the-light-falls/world /where-the-light-falls/lore /where-the-light-falls/chapter-one /sitemap.xml; do
+            echo "Checking https://bryanroubos.com$route"
+            curl --fail --location --retry 6 --retry-delay 5 --retry-all-errors --silent --show-error -o /dev/null "https://bryanroubos.com$route"
+          done

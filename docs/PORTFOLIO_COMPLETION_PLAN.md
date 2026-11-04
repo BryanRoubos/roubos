@@ -6,6 +6,8 @@
 
 **Design direction:** "I build systems. And worlds." Dark editorial / cinematic, burgundy, charcoal, warm ivory and muted bronze. Use the approved `hero.jpg` and `ThisOne.png`, plus only creator-approved public WTLF artwork. Use regular hyphens instead of em dashes in authored site copy.
 
+> **Status - November 4, 2026:** Pull request #3 was merged into `main` as `84ddb4f`. The source now includes the public WTLF world atlas, five characters, 19 lore routes, the original Chapter One artwork, and unified navigation. GitHub build and screenshot workflows pass. **Cloudflare production deployment has not been verified**, and the live domain could not be accessed from the audit environment. Checked items describe code/source verification, not full production sign-off. The unchecked items remain unresolved or require human visual/production verification.
+
 ## Source and approval boundaries
 
 - [ ] Treat the original public reader site's `app.js` entries as the source of truth for all 19 public lore entries (geography, society, history and five people).
@@ -18,36 +20,36 @@
 
 ### Homepage `/`
 
-- [ ] Professional positioning immediately visible: HU Utrecht Software Engineering student, working toward ML engineering.
-- [ ] Strong primary headline: "I build systems. And worlds."
+- [x] Professional positioning immediately visible: HU Utrecht Software Engineering student, working toward ML engineering.
+- [x] Strong primary headline: "I build systems. And worlds."
 - [ ] Approved `hero.jpg` as the hero; use real image markup and proper alt text.
-- [ ] Two clear visual work destinations: Engineering, Where the Light Falls. Do not make a redundant third Selected Work category.
-- [ ] Approved `ThisOne.png` in the Engineering card, properly framed; original WTLF art in creative card.
-- [ ] Short, concrete current work statement, without repeated introductions or defensive caveats.
-- [ ] Visible, simple contact CTA and correct `roubos@proton.me`.
-- [ ] Remove unnecessary duplicated cinematic promos or repetitive text after content review.
+- [x] Two clear visual work destinations: Engineering, Where the Light Falls. Do not make a redundant third Selected Work category.
+- [x] Approved `ThisOne.png` in the Engineering card, properly framed; original WTLF art in creative card.
+- [x] Short, concrete current work statement, without repeated introductions or defensive caveats.
+- [x] Visible, simple contact CTA and correct `roubos@proton.me`.
+- [x] Remove unnecessary duplicated cinematic promos or repetitive text after content review.
 
 ### Engineering `/engineering`
 
-- [ ] Emphasize real engineering evidence: backend internship / AI Infrastructure Cluster at Tandem-IT, Groupvibe (50,000+ users), third-place Digital Product Passport hackathon.
-- [ ] Feature Fantasy World AI Lab accurately: small simulated world, reproducible dataset, comparing learned predictions with transparent rules/baselines; don't claim incomplete milestones are finished.
-- [ ] Brief skills and technical direction, real experience before broad aspiration.
-- [ ] WebSneller and DesignAudit only as concise past references; no unwanted project links.
-- [ ] Remove redundant "how I'm learning" roadmap, filler and performative disclaimers.
+- [x] Emphasize real engineering evidence: backend internship / AI Infrastructure Cluster at Tandem-IT, Groupvibe (50,000+ users), third-place Digital Product Passport hackathon.
+- [x] Feature Fantasy World AI Lab accurately: small simulated world, reproducible dataset, comparing learned predictions with transparent rules/baselines; don't claim incomplete milestones are finished.
+- [x] Brief skills and technical direction, real experience before broad aspiration.
+- [x] WebSneller and DesignAudit only as concise past references; no unwanted project links.
+- [x] Remove redundant "how I'm learning" roadmap, filler and performative disclaimers.
 - [ ] Clear recruiter call to action with LinkedIn, GitHub and email.
 
 ### Where the Light Falls hub `/where-the-light-falls`
 
-- [ ] Story-first landing experience sourced from current public original; author and novel identity clear.
-- [ ] Emphasize *novel in development first*. Separately describe exploration in Blender / 3D, cinematics and a small game. Never frame those as completed.
-- [ ] Five character teasers leading to full original character profiles.
-- [ ] Illustrated atlas, public lore archive, and Chapter One, all internal on `bryanroubos.com`.
-- [ ] Remove any external "Explore original story website" CTA.
-- [ ] No spoilers/private materials introduced during copywriting.
+- [x] Story-first landing experience sourced from current public original; author and novel identity clear.
+- [x] Emphasize *novel in development first*. Separately describe exploration in Blender / 3D, cinematics and a small game. Never frame those as completed.
+- [x] Five character teasers leading to full original character profiles.
+- [x] Illustrated atlas, public lore archive, and Chapter One, all internal on `bryanroubos.com`.
+- [x] Remove any external "Explore original story website" CTA.
+- [x] No spoilers/private materials introduced during copywriting.
 
 ### Characters `/where-the-light-falls/characters`
 
-- [ ] All five public characters: Elias Varek, Mira Varek, Maren, Bram, unnamed figure.
+- [x] All five public characters: Elias Varek, Mira Varek, Maren, Bram, unnamed figure.
 - [ ] Each includes exact original public summary and paragraphs from reader site's `app.js`.
 - [ ] Each includes approved original matching art, with non-cropped visible faces and appropriate alt text.
 - [ ] Related lore navigation is internal and correct.
@@ -61,18 +63,18 @@
 ### Lore archive `/where-the-light-falls/lore` and `/where-the-light-falls/lore/[slug]`
 
 - [ ] Render all 19 public entries, not shortened invented summaries.
-- [ ] Group them by geography, life/power, history and people.
-- [ ] Each entry gets its own crawlable URL, direct navigation, preserved paragraphs and internal related links.
+- [x] Group them by geography, life/power, history and people.
+- [x] Each entry gets its own crawlable URL, direct navigation, preserved paragraphs and internal related links.
 - [ ] Feature relevant approved imagery where it exists.
 - [ ] Validate no lore conflicts with the original public reader website.
 
 ### Chapter One `/where-the-light-falls/chapter-one`
 
 - [ ] Use exactly the approved manuscript from public source, without silently revising it.
-- [ ] Restore all three original images at original manuscript positions: "Not enough", "Well, the knot held", "A better question".
-- [ ] Reader typography, comfortable measure, day/night mode and text size controls; correct mobile rendering.
-- [ ] No external reliance on the original GitHub Pages website for artwork or reading.
-- [ ] No accidental duplicate title or heading.
+- [x] Restore all three original images at original manuscript positions: "Not enough", "Well, the knot held", "A better question".
+- [x] Reader typography, comfortable measure, day/night mode and text size controls; correct mobile rendering.
+- [x] No external reliance on the original GitHub Pages website for artwork or reading.
+- [x] No accidental duplicate title or heading.
 
 ## P1 - Consistent visual system / interaction
 
@@ -87,14 +89,14 @@
 ## P2 - SEO, AI discovery, deployment
 
 - [ ] Unique title, description, canonical and OG/Twitter previews for all published routes.
-- [ ] Sitemap includes Engineering, story hub, characters, atlas, lore archive, all 19 lore URLs and Chapter One.
+- [x] Sitemap includes Engineering, story hub, characters, atlas, lore archive, all 19 lore URLs and Chapter One.
 - [ ] Check robots and crawlable content, internal navigation, metadataBase and author structured data.
-- [ ] Use Person schema for Bryan and appropriate creative-work metadata for the published novel, avoiding invented publication dates or availability.
+- [x] Use Person schema for Bryan and appropriate creative-work metadata for the published novel, avoiding invented publication dates or availability.
 - [ ] Ensure redirects from old paths are appropriate and no new 404s.
 - [ ] Validate Google Search Console indexing and rich-results/schema syntax after deployment; no guarantee of ranking or AI inclusion.
 - [ ] Check Cloudflare production vs GitHub main commit; not just local/CI build.
 - [ ] Run lint and production build. Inspect GitHub Actions logs and visual review screenshots. Manually inspect every page and every breakpoint.
-- [ ] Clean out or archive misleading old `README.md` claims and stale comments that deny real creative artwork.
+- [x] Clean out or archive misleading old `README.md` claims and stale comments that deny real creative artwork.
 
 ## GitHub and LinkedIn consistency
 
