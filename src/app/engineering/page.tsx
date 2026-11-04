@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeading } from "@/components/page-heading";
 import { site } from "@/lib/site";
+import { ArrowIcon } from "@/components/arrow-icon";
 
 export const metadata: Metadata = {
   title: "Engineering & Machine Learning",
@@ -45,11 +46,11 @@ export default function Engineering() {
             <p><strong>Working with</strong><br />Python, TypeScript, Node.js, SQL, Linux and Docker.</p>
             <p><strong>Learning deeper</strong><br />Machine learning, mathematics, statistics, model evaluation and AI infrastructure.</p>
             <p>I&apos;m particularly interested in applied machine learning, anomaly detection and building systems that work reliably beyond a demo.</p>
-            <a className="text-link" href={site.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a className="text-link" href={site.github} target="_blank" rel="noopener noreferrer">GitHub <ArrowIcon /></a>
           </div>
         </div>
       </section>
-      <section className="next-page"><div className="shell"><span>OUTSIDE CODE</span><Link href="/where-the-light-falls">Where the Light Falls <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="next-page"><div className="shell"><span>OUTSIDE CODE</span><Link href="/where-the-light-falls">Where the Light Falls <ArrowIcon /></Link></div></section>
     </>
   );
 }
