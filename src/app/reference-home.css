@@ -236,3 +236,7 @@ body:has(.reference-home) .footer-bottom{padding-block:24px}
 .reference-contact-links a{font-family:Arial,Helvetica,sans-serif;overflow-wrap:anywhere}
 @media(max-width:850px){.reference-cards{grid-template-columns:1fr;gap:16px}.portfolio-now{grid-template-columns:1fr;gap:25px;padding-block:70px}.reference-card{height:455px}}
 @media(max-width:500px){.reference-card{height:425px}.reference-card-copy{left:21px;right:20px}.reference-card h2{font-size:clamp(35px,8vw,52px)}}
+
+/* Keep the hero an accessible, indexable image while retaining its cinematic responsive crop. */
+.reference-hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 41%;pointer-events:none}
+@media(max-width:780px){.reference-hero-photo img{object-position:center 37%}}

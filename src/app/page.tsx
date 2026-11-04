@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import "./reference-home.css";
 
@@ -9,7 +10,7 @@ export default function Home() {
         <div className="reference-hero-backdrop" aria-hidden="true">
           <span className="reference-hero-arc reference-hero-arc-a" />
           <span className="reference-hero-arc reference-hero-arc-b" />
-          <span className="reference-hero-photo" />
+          <span className="reference-hero-photo"><Image unoptimized src="/hero.jpg" alt="Bryan Roubos portfolio hero portrait" fill sizes="(max-width: 780px) 100vw, 65vw" priority /></span>
         </div>
         <div className="shell reference-hero-shell">
           <div className="reference-hero-copy">

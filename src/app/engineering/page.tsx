@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Engineering() {
   return (
     <>
-      <PageHeading index="01" label="ENGINEERING & MACHINE LEARNING" title="Engineering &" accent="Machine Learning." description="I build software and I&apos;m working toward machine learning engineering by learning the foundations, building experiments and understanding how models behave beyond the API." />
+      <PageHeading index="01" label="ENGINEERING & MACHINE LEARNING" title="Engineering &" accent="Machine Learning." description="I build software and I'm working toward machine learning engineering through Python, practical experiments and a deeper understanding of how models are trained and evaluated." />
       <section className="engineering-intro shell">
         <span className="eyebrow">CURRENT ROLE</span>
         <p>Backend intern at <strong>Tandem-IT</strong>, contributing to HU Utrecht&apos;s AI Infrastructure Cluster, which provides GPU resources for training and running AI models.</p>
