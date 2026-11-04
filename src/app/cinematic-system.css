@@ -231,12 +231,22 @@ main h1,main h2,main h3{max-width:100%}
 @media(max-width:380px){.engineering-hero h1{font-size:clamp(40px,10.4vw,47px)}.engineering-stages{grid-template-columns:1fr}.engineering-stages li span{display:inline;margin-right:12px}}
 
 
-/* One shared transparent header. On hero pages it sits over the opening artwork. */
+/* Shared translucent header: the same dark glass over portraits, city art and plain pages. */
 .site-header{
-  background:transparent;
+  background:linear-gradient(180deg,rgba(11,8,11,.82),rgba(11,8,11,.72));
   border-bottom:0;
-  backdrop-filter:none;
-  -webkit-backdrop-filter:none;
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+}
+.site-header::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  top:100%;
+  height:32px;
+  background:linear-gradient(180deg,rgba(11,8,11,.28),transparent);
+  pointer-events:none;
 }
 body:has(.reference-home) .site-header,
 body:has(.engineering-page) .site-header,
