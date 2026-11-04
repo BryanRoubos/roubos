@@ -1,43 +1,48 @@
-# Bryan Roubos — cinematic personal portfolio
+# Bryan Roubos - Personal Portfolio and Creative Work
 
-A typography-led portfolio with a small live ML visualization for software engineering, writing, and 3D / game-world exploration. Built on the existing Next.js App Router project.
+Official website: https://bryanroubos.com
 
-## Run locally
+A software engineering and machine learning focused portfolio, with an integrated public home for the original fantasy novel **Where the Light Falls**.
 
-```bash
-npm install
-npm run dev
-```
+## About
 
-Open http://localhost:3000. Run `npm run build` for production verification.
+Bryan Roubos is a Software Engineering student at HU Utrecht and backend intern at Tandem-IT, working toward machine learning engineering. The portfolio presents relevant engineering work, the Fantasy World AI Lab project, and original storytelling developed through prose, visual worldbuilding, 3D models, cinematics, and small interactive experiments.
 
 ## Pages
 
-- `/` — cinematic landing page and introduction
-- `/engineering` — the machine learning path, selected work, background and toolkit
-- `/where-the-light-falls` — the creative project, with a link to the public Chapter One
-- `/about` — personal background and links
+- `/` - Introduction, Engineering and Where the Light Falls
+- `/engineering` - Technical direction, Fantasy World AI Lab, and selected work
+- `/where-the-light-falls` - Story overview and creative process
+- `/where-the-light-falls/world` - Illustrated canyon city atlas
+- `/where-the-light-falls/characters` - All five publicly introduced characters
+- `/where-the-light-falls/lore` - Browse the approved public lore archive
+- `/where-the-light-falls/lore/[slug]` - Individual public lore entries
+- `/where-the-light-falls/chapter-one` - Complete approved Chapter One and original illustrations
 
-Legacy unfinished blog, admin, login, and registration routes have been removed. Former /blog, /contact, /writing and /3d-games URLs redirect to the relevant sections.
+## Public canon and artwork
 
-## DRY architecture
+The source of truth for public `Where the Light Falls` content is [the original reader website repository](https://github.com/BryanRoubos/where-the-light-falls-site):
 
-- `src/lib/site.ts`: navigation, disciplines, contact links, site metadata
-- `src/components/`: shared header, footer, page heading, section title
-- `src/app/globals.css`: visual tokens, shared patterns, responsive layouts
-- `src/app/sitemap.ts` and `robots.ts`: generated crawler resources
+- `app.js` contains the approved lore entries.
+- `chapters/chapter-one.md` contains the approved Chapter One manuscript.
+- `data/approved-images.json` and `assets/images` identify approved published art.
+- Original author-only notes and unreleased plot information must remain private.
 
-No game screenshots, old WTLF illustrations, generated art, stock imagery, or third-party fonts are used. Abstract hero/stage designs are CSS and typography only.
+The personal hero image is `public/hero.jpg`, and the selected work photo is `public/selected-work.png`.
 
-When genuine original 3D work is ready, replace abstract visual stages with optimized AVIF/WebP renders, useful alt text, accessible captions, and a lightweight fallback. Keep 3D render processing outside the browser until interactive 3D genuinely adds value.
+## Development
 
-## Before going live
+```bash
+npm ci
+npm run dev
+npm run lint
+npm run build:vinext
+```
 
-1. Verify `bryanroubos.com` is the correct canonical domain and DNS is pointed at the chosen host; change `src/lib/site.ts` if not.
-2. Confirm public contact email and biography wording.
-3. Test keyboard navigation, mobile menu, zoom, reduced-motion and screen-reader headings.
-4. Run `npm install && npm run build` and Lighthouse / Core Web Vitals on a deployed preview.
-5. Confirm GitHub links, canonical URLs, `/sitemap.xml`, `/robots.txt`, and metadata.
-6. Add only independently made and approved 3D work later. Do not publish private WTLF manuscript material.
+This site uses Next.js App Router, React and vinext for Cloudflare. GitHub Actions run lint/build and visual review workflows.
 
-This branch intentionally keeps Next.js rather than migrating an existing codebase to Astro solely for framework preference. It is primarily server-rendered static content; client-side JavaScript is used for the optional neural-network visualization, not navigation.
+## Completion and QA
+
+See [the portfolio completion plan](docs/PORTFOLIO_COMPLETION_PLAN.md). A passing build does not establish that production was deployed or that responsive layouts have passed manual visual testing.
+
+Contact: [roubos@proton.me](mailto:roubos@proton.me).
