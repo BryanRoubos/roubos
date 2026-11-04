@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowIcon } from "@/components/arrow-icon";
 import { WtlfNavigation } from "@/components/wtlf-navigation";
 import { loreEntries } from "@/lib/wtlf-lore";
 import "../world.css";
@@ -27,11 +26,11 @@ export default function LoreArchive() {
         <div className="wtlf-lore-grid">{group.ids.map(id=>{
           const entry=loreEntries.find(e=>e.id===id);
           return entry?<Link className="wtlf-lore-card" href={`/where-the-light-falls/lore/${entry.id}`} key={id}>
-            <span>{entry.type}</span><h3>{entry.title}</h3><p>{entry.summary}</p><span className="wtlf-card-action">READ ENTRY <ArrowIcon /></span>
+            <span>{entry.type}</span><h3>{entry.title}</h3><p>{entry.summary}</p><span className="wtlf-card-action">READ ENTRY</span>
           </Link>:null;
         })}</div>
       </section>)}
     </div>
-    <div className="next-page"><div className="shell"><span>READY TO ENTER THE STORY?</span><Link href="/where-the-light-falls/chapter-one">Read Chapter One <ArrowIcon /></Link></div></div>
+    <div className="next-page"><div className="shell"><span>READY TO ENTER THE STORY?</span><Link href="/where-the-light-falls/chapter-one">Read Chapter One</Link></div></div>
   </div>;
 }

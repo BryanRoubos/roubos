@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowIcon } from "@/components/arrow-icon";
 import { WtlfNavigation } from "@/components/wtlf-navigation";
 import { findLoreEntry, loreEntries } from "@/lib/wtlf-lore";
 import { characterArt, worldArt } from "@/lib/wtlf-media";
@@ -28,9 +27,9 @@ export default async function LoreEntry({params}:Params){
    <article className="wtlf-article shell">
      {art && <figure><Image unoptimized src={art} width={1100} height={1400} sizes="(max-width: 850px) 100vw, 600px" alt={alt} /></figure>}
      <div className="wtlf-article-copy">{e.body.map((p,i)=><p key={i}>{p}</p>)}
-       {related.length>0&&<section className="wtlf-related"><span className="eyebrow">KEEP EXPLORING</span><div>{related.map(v=><Link key={v.id} href={`/where-the-light-falls/lore/${v.id}`}>{v.title} <ArrowIcon /></Link>)}</div></section>}
+       {related.length>0&&<section className="wtlf-related"><span className="eyebrow">KEEP EXPLORING</span><div>{related.map(v=><Link key={v.id} href={`/where-the-light-falls/lore/${v.id}`}>{v.title}</Link>)}</div></section>}
      </div>
    </article>
-   <div className="next-page"><div className="shell"><span>DISCOVER THE STORY</span><Link href="/where-the-light-falls/chapter-one">Read Chapter One <ArrowIcon /></Link></div></div>
+   <div className="next-page"><div className="shell"><span>DISCOVER THE STORY</span><Link href="/where-the-light-falls/chapter-one">Read Chapter One</Link></div></div>
  </div>;
 }

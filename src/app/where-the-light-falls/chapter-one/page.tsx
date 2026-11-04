@@ -46,7 +46,7 @@ function ChapterImage({ image }: { image: (typeof illustrations)[keyof typeof il
 export default function ChapterOne() {
   return <div className="world-page chapter-page">
     <header className="chapter-heading shell">
-      <Link href="/where-the-light-falls" className="world-text-link">← BACK TO THE WORLD</Link>
+      <Link href="/where-the-light-falls" className="world-text-link">BACK TO THE WORLD</Link>
       <span className="eyebrow">WHERE THE LIGHT FALLS / BOOK ONE</span>
       <h1>Chapter <em>One.</em></h1>
       <p>A missing sister. A city shaped by its shadows. An ordinary working day in the Lower City.</p>
@@ -73,7 +73,7 @@ export default function ChapterOne() {
     </section>
     <div className="chapter-return shell">
       <p>You&apos;ve reached the end of Chapter One.</p>
-      <Link className="reference-primary" href="/where-the-light-falls">RETURN TO THE WORLD <span aria-hidden="true">↗</span></Link>
+      <Link className="reference-primary" href="/where-the-light-falls">RETURN TO THE WORLD</Link>
     </div>
   </div>;
 }

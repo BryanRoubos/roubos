@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
-import { ArrowIcon } from "@/components/arrow-icon";
 import "./reference-home.css";
 
 export default function Home() {
@@ -20,8 +19,8 @@ export default function Home() {
             <p className="reference-deck">Software engineering, machine learning,<br />and original worldbuilding.</p>
             <p className="reference-intro">I&apos;m a Software Engineering student at HU Utrecht, working toward machine learning engineering. I build software, study how intelligent systems work, and create the original fantasy universe <em>Where the Light Falls</em>.</p>
             <div className="reference-hero-actions">
-              <Link href="/engineering" className="reference-primary">EXPLORE ENGINEERING <ArrowIcon direction="right" /></Link>
-              <Link className="reference-secondary" href="/where-the-light-falls">ENTER WHERE THE LIGHT FALLS <ArrowIcon /></Link>
+              <Link href="/engineering" className="reference-primary">EXPLORE ENGINEERING</Link>
+              <Link className="reference-secondary" href="/where-the-light-falls">ENTER WHERE THE LIGHT FALLS</Link>
             </div>
           </div>
         </div>
@@ -35,7 +34,7 @@ export default function Home() {
             <span className="reference-card-category">BACKEND / SYSTEMS / MACHINE LEARNING</span>
             <h2>Engineering &amp;<br />Machine Learning</h2>
             <p>Backend systems, machine learning foundations and experiments built to understand how models learn and behave.</p>
-            <span className="reference-card-action">EXPLORE ENGINEERING <ArrowIcon direction="right" /></span>
+            <span className="reference-card-action">EXPLORE ENGINEERING</span>
           </div>
         </Link>
         <Link className="reference-card reference-card-world" href="/where-the-light-falls">
@@ -45,7 +44,7 @@ export default function Home() {
             <span className="reference-card-category">WRITING / WORLDBUILDING / VISUAL DEVELOPMENT</span>
             <h2>Where the<br />Light Falls</h2>
             <p>An original fantasy novel, now explored through 3D modeling, cinematics and a small game.</p>
-            <span className="reference-card-action">ENTER THE WORLD <ArrowIcon direction="right" /></span>
+            <span className="reference-card-action">ENTER THE WORLD</span>
           </div>
         </Link>
       </section>
@@ -55,7 +54,7 @@ export default function Home() {
         <div>
           <h2 id="portfolio-now-title">What I&apos;m <em>building now.</em></h2>
           <p>I&apos;m a backend intern at Tandem-IT, contributing to HU Utrecht&apos;s AI Infrastructure Cluster. Alongside that work, I&apos;m building Fantasy World AI Lab while strengthening my Python, mathematics and machine learning foundations.</p>
-          <Link href="/engineering" className="portfolio-inline-link">MORE ABOUT MY ENGINEERING WORK <ArrowIcon /></Link>
+          <Link href="/engineering" className="portfolio-inline-link">MORE ABOUT MY ENGINEERING WORK</Link>
         </div>
       </section>
 
@@ -65,8 +64,8 @@ export default function Home() {
           <h2>Let&apos;s make<br /><em>something real.</em></h2>
           <p>I&apos;m interested in machine learning internships, technical projects and international study opportunities.</p>
           <div className="reference-contact-links">
-            <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN <ArrowIcon /></a>
-            <a href={site.github} target="_blank" rel="noopener noreferrer">GITHUB <ArrowIcon /></a>
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+            <a href={site.github} target="_blank" rel="noopener noreferrer">GITHUB</a>
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </div>
         </div>

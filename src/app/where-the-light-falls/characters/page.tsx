@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowIcon } from "@/components/arrow-icon";
 import { WtlfNavigation } from "@/components/wtlf-navigation";
 import { loreEntries } from "@/lib/wtlf-lore";
 import { characterArt } from "@/lib/wtlf-media";
@@ -27,11 +26,11 @@ export default function Characters() {
             <h2>{character.title}</h2>
             <p className="wtlf-profile-summary">{character.summary}</p>
             {character.body.map((paragraph,i)=><p key={i}>{paragraph}</p>)}
-            <Link href={`/where-the-light-falls/lore/${character.id}`} className="text-link">Explore related entries <ArrowIcon /></Link>
+            <Link href={`/where-the-light-falls/lore/${character.id}`} className="text-link">Explore related entries</Link>
           </div>
         </article>;
       })}
     </div>
-    <div className="next-page"><div className="shell"><span>FOLLOW THESE PEOPLE THROUGH THE CITY</span><Link href="/where-the-light-falls/chapter-one">Read Chapter One <ArrowIcon /></Link></div></div>
+    <div className="next-page"><div className="shell"><span>FOLLOW THESE PEOPLE THROUGH THE CITY</span><Link href="/where-the-light-falls/chapter-one">Read Chapter One</Link></div></div>
   </div>;
 }
