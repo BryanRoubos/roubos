@@ -161,3 +161,71 @@ main h1,main h2,main h3{max-width:100%}
  .career-entry{min-width:0}
  .next-page a{font-size:clamp(32px,9vw,48px)}
 }
+
+
+/* Engineering: an immediate, credible introduction with evidence close to the fold. */
+.engineering-page{background:#0b090c}
+.engineering-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 76% 25%,rgba(121,43,51,.27),transparent 53%),linear-gradient(130deg,#1a1015,#0b090c 74%)}
+.engineering-hero:before{content:"";position:absolute;width:min(65vw,900px);aspect-ratio:1;right:-23%;top:-65%;border:1px solid rgba(219,160,137,.13);border-radius:50%;pointer-events:none}
+.engineering-hero-inner{position:relative;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.55fr);align-items:end;gap:clamp(35px,5vw,90px);padding-block:clamp(65px,7vw,110px) clamp(55px,6vw,85px)}
+.engineering-hero-main{min-width:0}
+.engineering-hero h1{font:normal clamp(57px,6.4vw,105px)/.98 Georgia,'Times New Roman',serif;letter-spacing:-.067em;margin:25px 0 27px;overflow-wrap:break-word}
+.engineering-hero h1 em{color:#e7b59a}
+.engineering-hero-main>p{max-width:660px;color:#d5c2b6;font-size:clamp(16px,1.45vw,20px);line-height:1.65;margin-bottom:0}
+.engineering-hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:20px 28px;margin-top:32px}
+.engineering-page .reference-primary{display:inline-flex;align-items:center;justify-content:center;min-height:49px;padding:15px 23px;border-radius:3px;background:linear-gradient(120deg,#f1d8c0,#d3a388);color:#1a1112;font:800 11px/1.3 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-decoration:none}
+.engineering-page .reference-primary:hover{filter:brightness(1.08)}
+.engineering-page .reference-primary:focus-visible{outline:2px solid #fff;outline-offset:4px}
+.engineering-hero-actions .text-link{margin:0;min-height:44px;align-items:center}
+.engineering-hero-aside{border-left:1px solid rgba(222,175,151,.36);padding:12px 0 7px 28px;max-width:390px}
+.engineering-hero-aside h2{font:normal clamp(27px,2.6vw,40px)/1.14 Georgia,serif;letter-spacing:-.035em;margin:25px 0 18px}
+.engineering-hero-aside h2 em{color:#e7b59a}
+.engineering-hero-aside p{font-size:14px;line-height:1.7;color:#c9b4a8;max-width:310px}
+.engineering-hero-aside-foot{display:block;margin-top:24px;color:#bc967f;font:700 10px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.15em}
+.engineering-evidence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,4vw,60px);padding-block:30px 36px;border-bottom:1px solid rgba(222,175,151,.22)}
+.engineering-evidence>div{min-width:0}
+.engineering-evidence>div+div{border-left:1px solid rgba(222,175,151,.2);padding-left:clamp(20px,3vw,50px)}
+.engineering-evidence span{display:block;font:700 10px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.15em;color:#d7a88d}
+.engineering-evidence strong{display:block;font:normal clamp(20px,2vw,30px)/1.2 Georgia,serif;color:#f4e5d8;margin-top:10px}
+.engineering-evidence p{color:#bba99e;font-size:13px;line-height:1.55;margin:6px 0 0}
+.engineering-feature{scroll-margin-top:85px}
+.engineering-feature-copy{max-width:680px}
+.engineering-feature-copy .engineering-lead{font:normal clamp(23px,2.3vw,32px)/1.36 Georgia,serif;color:#f0ddd0;margin:0 0 23px}
+.engineering-feature-copy .engineering-question{border-left:2px solid #d7a68b;padding-left:22px;color:#e8d0c0;font:italic clamp(19px,1.65vw,24px)/1.55 Georgia,serif;margin:27px 0}
+.engineering-stages{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:22px 0 0;margin:26px 0 16px;border-top:1px solid rgba(222,175,151,.27)}
+.engineering-stages li{font-size:13px;line-height:1.5;color:#e4d2c6}
+.engineering-stages li span{display:block;font:700 10px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.13em;color:#d4a58a;margin-bottom:8px}
+.engineering-feature-copy .engineering-project-status{font-size:13px;color:#bda99e}
+.engineering-section-heading{font:normal clamp(40px,4.6vw,68px)/1.08 Georgia,serif;letter-spacing:-.05em;margin:35px 0 30px}
+.engineering-section-heading em{color:#e7b59a}
+.engineering-skills .prose{max-width:620px}
+.engineering-skill-group{padding-top:19px;margin-bottom:24px;border-top:1px solid rgba(222,175,151,.23)}
+.engineering-skill-group h3{font:normal 23px/1.2 Georgia,serif;color:#f0dac9;margin:0 0 9px}
+.engineering-skill-group p{margin:0}
+@media(max-width:1000px){
+ .engineering-hero-inner{grid-template-columns:minmax(0,1fr) minmax(240px,.55fr);gap:35px}
+ .engineering-hero h1{font-size:clamp(52px,6.2vw,76px)}
+}
+@media(max-width:750px){
+ .engineering-hero-inner{grid-template-columns:1fr;padding-block:56px 44px;gap:38px}
+ .engineering-hero h1{font-size:clamp(48px,9vw,77px);margin-block:20px 22px}
+ .engineering-hero-aside{max-width:100%;padding:0 0 0 20px}
+ .engineering-hero-aside h2{margin:12px 0}
+ .engineering-hero-aside-foot{margin-top:12px}
+ .engineering-evidence{gap:18px}
+ .engineering-evidence>div+div{padding-left:18px}
+}
+@media(max-width:600px){
+ .engineering-hero-inner{padding-block:44px 40px}
+ .engineering-hero h1{font-size:clamp(45px,10.8vw,65px);line-height:1.01}
+ .engineering-hero-main>p{font-size:16px;line-height:1.65}
+ .engineering-hero-actions{margin-top:24px}
+ .engineering-evidence{grid-template-columns:1fr;gap:0;padding-block:14px 22px}
+ .engineering-evidence>div,.engineering-evidence>div+div{border-left:0;border-bottom:1px solid rgba(222,175,151,.18);padding:16px 0}
+ .engineering-evidence>div:last-child{border-bottom:0}
+ .engineering-evidence strong{margin-top:5px}
+ .engineering-stages{gap:15px}
+ .engineering-stages li{font-size:12px}
+ .engineering-section-heading{margin-top:25px}
+}
+@media(max-width:380px){.engineering-hero h1{font-size:clamp(40px,10.4vw,47px)}.engineering-stages{grid-template-columns:1fr}.engineering-stages li span{display:inline;margin-right:12px}}

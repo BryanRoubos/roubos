@@ -182,3 +182,56 @@
  .chapter-finish{padding-top:30px}
  .chapter-finish-link{letter-spacing:.02em;font-size:12px}
 }
+
+
+/* Story landing: make the premise legible immediately and put the first chapter within reach. */
+.world-page .world-hero{height:auto;min-height:clamp(630px,84svh,820px)}
+.world-page .world-hero-shade{background:linear-gradient(90deg,rgba(11,9,12,.88) 0%,rgba(11,9,12,.69) 39%,rgba(11,9,12,.14) 95%),linear-gradient(0deg,#0b090c 0%,rgba(11,9,12,.22) 48%,rgba(11,9,12,.2) 100%)}
+.world-page .world-hero-copy{padding-block:clamp(100px,10vw,155px) clamp(62px,7vw,92px)}
+.world-page .world-hero h1{font-size:clamp(60px,8.4vw,133px);line-height:.96;margin:17px 0 25px}
+.world-page .world-hero-copy .world-hero-hook{font:italic clamp(23px,2.4vw,34px)/1.32 Georgia,serif;color:#f7e9dc;max-width:680px;margin:0 0 15px}
+.world-page .world-hero-copy .world-hero-premise{font:normal clamp(16px,1.35vw,19px)/1.65 Arial,Helvetica,sans-serif;color:#e3d1c5;max-width:540px;margin:0}
+.world-page .world-hero-actions{margin-top:30px}
+.world-hero-byline{display:block;margin-top:28px;font:700 10px/1.5 Arial,Helvetica,sans-serif;letter-spacing:.15em;color:#d2ad98}
+.world-page .world-gallery-section{scroll-margin-top:85px}
+.world-page .world-spotlight>div{max-width:640px}
+.world-page .world-spotlight p{line-height:1.72;max-width:570px}
+.world-page .world-spotlight .world-spotlight-lead{font:italic clamp(20px,1.9vw,27px)/1.5 Georgia,serif;color:#f0ddce;margin-bottom:18px}
+.world-page .world-chapter-preview .world-excerpt{display:block;border-left:2px solid #d6a58a;padding-left:23px;margin:26px 0 22px;max-width:600px}
+.world-page .world-preview-grid>div{min-width:0}
+.world-page .world-preview-grid p{max-width:590px}
+.world-page .world-discover-links{display:flex;flex-wrap:wrap;gap:0 25px;margin-top:12px}
+.world-page .world-discover-links .text-link{margin-right:0}
+.world-page .world-section-heading{max-width:690px}
+.world-page .world-section-heading p{max-width:530px;line-height:1.65}
+.world-page .wtlf-character-teaser p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.world-page .wtlf-creative-process .prose{max-width:640px}
+@media(max-width:850px){
+ .world-page .world-hero{min-height:clamp(620px,85svh,790px)}
+ .world-page .world-hero-copy{padding-block:95px 60px}
+ .world-page .world-spotlight{gap:28px}
+ .world-page .world-spotlight>div{order:1}
+ .world-page .world-spotlight>img{order:2;height:460px;object-position:center 28%}
+ .world-page .world-preview-grid{gap:30px}
+ .world-page .world-chapter-preview .world-excerpt{max-width:660px}
+}
+@media(max-width:600px){
+ .world-page .world-hero{min-height:clamp(625px,calc(100svh - 72px),780px)}
+ .world-page .world-hero-image{object-position:63% center}
+ .world-page .world-hero-shade{background:linear-gradient(90deg,rgba(11,9,12,.86),rgba(11,9,12,.45)),linear-gradient(0deg,#0b090c,transparent 80%)}
+ .world-page .world-hero-copy{padding-block:85px 47px}
+ .world-page .world-hero h1{font-size:clamp(54px,12.5vw,76px);line-height:1.01;margin:18px 0 23px}
+ .world-page .world-hero-copy .world-hero-hook{font-size:clamp(22px,5.5vw,27px);line-height:1.38}
+ .world-page .world-hero-copy .world-hero-premise{font-size:15px;line-height:1.6}
+ .world-page .world-hero-actions{gap:12px 20px;margin-top:23px}
+ .world-hero-byline{font-size:9px;letter-spacing:.1em;margin-top:22px}
+ .world-page .world-spotlight>img{height:380px}
+ .world-page .world-spotlight h2,.world-page .world-preview-grid h2,.world-page .world-section-heading h2{font-size:clamp(43px,10vw,62px);line-height:1.07}
+ .world-page .world-preview-grid>img{height:360px}
+ .world-page .world-chapter-preview .world-excerpt{padding-left:17px;font-size:clamp(21px,5.5vw,27px)!important}
+ .world-page .world-discover-links{gap:0 18px}
+}
+@media(max-width:380px){
+ .world-page .world-hero h1{font-size:clamp(47px,12vw,55px)}
+ .world-page .world-hero-copy{padding-block:65px 38px}
+}
