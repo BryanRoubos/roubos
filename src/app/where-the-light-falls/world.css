@@ -53,7 +53,7 @@
 .world-page .reference-primary:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .world-page .world-hero-actions .world-text-link{min-height:44px;display:inline-flex;align-items:center}
 .world-page .chapter-reading h2,.world-page .chapter-reading h3{scroll-margin-top:80px}
-@media(max-width:600px){.world-page .reference-primary{max-width:100%}.world-page .world-hero-copy{padding-inline:0}}
+@media(max-width:600px){.world-page .reference-primary{max-width:100%}.world-page .world-hero-copy{padding-inline:var(--gutter)}}
 
 /* Chapter One: a readable manuscript, with approved art at the original story beats. */
 .chapter-page{--reader-font:19px}
@@ -234,4 +234,27 @@
 @media(max-width:380px){
  .world-page .world-hero h1{font-size:clamp(47px,12vw,55px)}
  .world-page .world-hero-copy{padding-block:65px 38px}
+}
+
+
+/* Keep novel landing content aligned with the shared site gutter on all widths. */
+.world-page .world-hero-copy { min-width:0; }
+@media (max-width:600px) {
+  .world-page .world-hero-copy { padding-inline:var(--gutter); }
+  .world-page .world-hero h1 { overflow-wrap:normal; }
+  .world-page .world-hero-actions { max-width:100%; }
+}
+
+/* Preserve portrait composition: don't crop heads on large character cards. */
+.world-page .wtlf-character-teaser img {
+  object-fit:contain;
+  object-position:center top;
+  background:#171116;
+}
+.world-page .wtlf-profile-art img {
+  height:auto;
+  max-height:720px;
+  object-fit:contain;
+  object-position:center top;
+  background:#171116;
 }
