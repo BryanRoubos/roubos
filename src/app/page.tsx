@@ -16,7 +16,7 @@ export default function Home() {
           <div className="reference-hero-copy">
             <div className="reference-overline"><span>BRYAN ROUBOS</span><i /></div>
             <h1 id="reference-headline">I build systems.<br /><em>And worlds.</em></h1>
-            <p className="reference-deck">Software engineering, machine learning,<br /> and original worldbuilding.</p>
+            <p className="reference-deck">Software engineering, machine learning,<br />{" "}and original worldbuilding.</p>
             <p className="reference-intro">I&apos;m a Software Engineering student at HU Utrecht, working toward machine learning engineering. I build software, study how intelligent systems work, and create the original fantasy universe <em>Where the Light Falls</em>.</p>
             <div className="reference-hero-actions">
               <Link href="/engineering" className="reference-primary">EXPLORE ENGINEERING</Link>
