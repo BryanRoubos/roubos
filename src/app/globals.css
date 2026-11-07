@@ -15,7 +15,8 @@
   --serif: Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
   --max: 1480px;
-  --gutter: clamp(22px, 5vw, 84px);
+  --gutter: clamp(22px, 4vw, 64px);
+  --section-space: clamp(56px, 7vw, 104px);
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -35,7 +36,7 @@ em { font-family: var(--serif); font-weight: 400; }
 .eyebrow, .section-title-meta, .section-kicker, .hero-overline, .hero-bottom, .art-corner, .art-label > span, .discipline-top, .card-action, .world-visual-top, .world-visual-bottom, .tag-row, .now-item > span, .small-status, .panel-heading, .stage-top, .stage-bottom, .process-grid > div > span, .about-monogram-label, .about-monogram-foot, .next-page > div > span, .footer-legal, .footer-contact { font-size: 11px; font-weight: 700; letter-spacing: .14em; line-height: 1.6; }
 .eyebrow { color: var(--accent); }
 .status-pip { display: inline-block; width: 6px; height: 6px; margin-right: 10px; border-radius: 50%; background: #b8d4c5; box-shadow: 0 0 12px rgba(184,212,197,.55); vertical-align: middle; }
-.section-space { padding-block: clamp(90px, 10vw, 160px); }
+.section-space { padding-block: var(--section-space); }
 .text-link { display: inline-flex; align-items: center; gap: 26px; font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--line-strong); padding-bottom: 10px; transition: color .2s, border-color .2s; }
 .text-link:hover { color: var(--accent); border-color: var(--accent); }
 .button { display: inline-flex; justify-content: space-between; align-items: center; gap: 35px; min-height: 56px; padding: 17px 23px; font-size: 12px; font-weight: 700; letter-spacing: .025em; transition: transform .2s, background .2s; }
@@ -571,3 +572,7 @@ select:focus-visible,input:focus-visible{outline:2px solid #e6d4af;outline-offse
  .character-lab-panel{padding:16px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Shared rhythm: all page sections use the same exterior alignment and spacing. */
+.shell { max-width: none; }
+@media (max-width: 600px) { :root { --section-space: 56px; --gutter: 22px; } }
