@@ -42,7 +42,7 @@ body{background:#0b090c;color:#f6eae0}
 .page-heading h1 em{color:#edbda2}
 .page-heading-bottom p{font-size:clamp(15px,1.6vw,20px);max-width:720px;line-height:1.6;color:#c9b6ac}
 .page-heading-mark{color:rgba(231,180,149,.35);font-family:Georgia,serif}
-.section-space{padding-block:clamp(65px,7vw,110px)}
+.section-space{padding-block:var(--section-space)}
 .two-column-section{grid-template-columns:.9fr 1.1fr;gap:clamp(35px,6vw,110px)}
 .two-column-section h2,.writing-copy h2{font:normal clamp(40px,4.8vw,72px)/1.04 Georgia,'Times New Roman',serif;letter-spacing:-.06em;margin:22px 0}
 .two-column-section h2 em,.writing-copy h2 em,.next-page a span{color:#e3ae98}
@@ -156,7 +156,7 @@ main h1,main h2,main h3{max-width:100%}
  .site-footer-compact .footer-bottom nav a{font-size:12px}
  .site-footer-compact .footer-legal{gap:9px 18px}
  .site-footer-compact .footer-legal>*{line-height:1.6}
- .section-space{padding-block:clamp(48px,12vw,72px)}
+ .section-space{padding-block:var(--section-space)}
  .two-column-section{gap:25px}
  .career-entry{min-width:0}
  .next-page a{font-size:clamp(32px,9vw,48px)}
@@ -261,4 +261,15 @@ body:has(.engineering-page) .engineering-hero-inner{
 }
 @media(max-width:600px){
   body:has(.engineering-page) .engineering-hero-inner{padding-top:106px}
+}
+
+/* Centralize page width, fluid gutters, and vertical spacing across both themes. */
+.site-header .shell,.site-footer .shell { max-width:none; }
+.wtlf-page-header,.chapter-heading { box-sizing:border-box; }
+@media (max-width:900px) {
+ .mobile-menu nav { z-index:30; top:calc(100% + 8px); max-width:calc(100vw - 2 * var(--gutter)); }
+}
+@media (max-width:600px) {
+ .site-footer-compact .footer-bottom nav { row-gap:15px; }
+ .next-page>div { padding-block:var(--section-space); }
 }
