@@ -261,6 +261,8 @@
 
 /* Shared WTLF atlas showcase — aligned editorial text with intentional full-width imagery. */
 .world-page .wtlf-atlas-showcase { background:#100d11; scroll-margin-top:85px; }
+.world-page .wtlf-atlas-primary:focus-visible,.world-page .wtlf-atlas-place:focus-visible { outline:2px solid #e7b59a;outline-offset:4px; }
+.world-page .wtlf-atlas-place>span { overflow-wrap:anywhere; }
 .world-page .wtlf-atlas-intro { display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);align-items:end;gap:clamp(24px,5vw,80px);margin-bottom:clamp(28px,4vw,55px); }
 .world-page .wtlf-atlas-intro h2 { font-size:clamp(44px,5.6vw,86px);line-height:1.04;margin:18px 0 0; }
 .world-page .wtlf-atlas-intro p { max-width:440px;color:#d1bfb3;font-size:clamp(15px,1.3vw,18px);line-height:1.7;margin-bottom:20px; }

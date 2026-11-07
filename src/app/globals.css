@@ -573,6 +573,6 @@ select:focus-visible,input:focus-visible{outline:2px solid #e6d4af;outline-offse
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
-/* Shared rhythm: all page sections use the same exterior alignment and spacing. */
+/* Shared rhythm: consistent exterior alignment and spacing across every page. */
 .shell { max-width: none; }
 @media (max-width: 600px) { :root { --section-space: 56px; --gutter: 22px; } }
