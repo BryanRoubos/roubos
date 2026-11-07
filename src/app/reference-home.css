@@ -263,3 +263,8 @@ body:has(.reference-home) .footer-bottom{padding-block:24px}
  .reference-card{height:405px}
  .reference-card h2{font-size:clamp(32px,9vw,40px)}
 }
+
+/* Align homepage section rhythm with the site-wide layout tokens. */
+.reference-home .portfolio-now { padding-block:var(--section-space); }
+.reference-home .reference-contact { padding-block:var(--section-space); }
+.reference-home .reference-cards { gap:clamp(14px,2vw,24px); }
