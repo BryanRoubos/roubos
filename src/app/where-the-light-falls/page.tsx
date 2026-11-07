@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { WtlfNavigation } from "@/components/wtlf-navigation";
 import { loreEntries } from "@/lib/wtlf-lore";
-import { characterArt } from "@/lib/wtlf-media";
+import { characterArt, worldArt } from "@/lib/wtlf-media";
 import "./world.css";
 
 export const metadata: Metadata = {
@@ -26,13 +26,41 @@ export default function WhereTheLightFalls() {
         <p className="world-hero-premise">Two years after Mira vanished during an uprising, her brother Elias finds a reason to search again.</p>
         <div className="world-hero-actions">
           <Link className="reference-primary" href="/where-the-light-falls/chapter-one">READ CHAPTER ONE</Link>
-          <Link className="world-text-link" href="#elias">MEET ELIAS</Link>
+          <Link className="world-text-link" href="#atlas">EXPLORE THE WORLD</Link>
         </div>
         <span className="world-hero-byline">A NOVEL IN DEVELOPMENT BY BRYAN ROUBOS</span>
       </div>
     </section>
 
     <WtlfNavigation />
+
+
+    <section className="section-space wtlf-atlas-showcase" id="atlas" aria-labelledby="wtlf-atlas-title">
+      <div className="shell">
+        <div className="wtlf-atlas-intro">
+          <div>
+            <span className="eyebrow">EXPLORE / THE ILLUSTRATED WORLD ATLAS</span>
+            <h2 id="wtlf-atlas-title">A city carved<br /><em>into the canyon.</em></h2>
+          </div>
+          <div>
+            <p>From the Upper City to the waterfront of Deepwater, discover the places and people that shape Where the Light Falls.</p>
+            <Link className="reference-primary" href="/where-the-light-falls/world">EXPLORE THE WORLD ATLAS</Link>
+          </div>
+        </div>
+        <Link href="/where-the-light-falls/world" className="wtlf-atlas-primary" aria-label="Explore the illustrated World Atlas">
+          <Image unoptimized src={worldArt[0].src} alt={worldArt[0].alt} width={1672} height={941} sizes="(max-width: 850px) 100vw, 90vw" />
+          <span>THE CANYON METROPOLIS <span aria-hidden="true">↗</span></span>
+        </Link>
+        <div className="wtlf-atlas-places">
+          {worldArt.slice(1,4).map((place) => (
+            <Link key={place.id} href={`/where-the-light-falls/world#${place.id}`} className="wtlf-atlas-place">
+              <Image unoptimized src={place.src} alt={place.alt} width={750} height={520} sizes="(max-width: 650px) 85vw, 29vw" />
+              <span>{place.title}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
 
     <section className="section-space world-gallery-section" id="elias" aria-labelledby="wtlf-elias-title">
       <div className="shell world-spotlight">
