@@ -53,7 +53,7 @@
 .world-page .reference-primary:focus-visible{outline:2px solid #fff;outline-offset:4px}
 .world-page .world-hero-actions .world-text-link{min-height:44px;display:inline-flex;align-items:center}
 .world-page .chapter-reading h2,.world-page .chapter-reading h3{scroll-margin-top:80px}
-@media(max-width:600px){.world-page .reference-primary{max-width:100%}.world-page .world-hero-copy{padding-inline:var(--gutter)}}
+@media(max-width:600px){.world-page .reference-primary{max-width:100%}}
 
 /* Chapter One: a readable manuscript, with approved art at the original story beats. */
 .chapter-page{--reader-font:19px}
@@ -240,7 +240,7 @@
 /* Keep novel landing content aligned with the shared site gutter on all widths. */
 .world-page .world-hero-copy { min-width:0; }
 @media (max-width:600px) {
-  .world-page .world-hero-copy { padding-inline:var(--gutter); }
+  
   .world-page .world-hero h1 { overflow-wrap:normal; }
   .world-page .world-hero-actions { max-width:100%; }
 }
@@ -257,4 +257,32 @@
   object-fit:contain;
   object-position:center top;
   background:#171116;
+}
+
+/* Shared WTLF atlas showcase — aligned editorial text with intentional full-width imagery. */
+.world-page .wtlf-atlas-showcase { background:#100d11; scroll-margin-top:85px; }
+.world-page .wtlf-atlas-intro { display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);align-items:end;gap:clamp(24px,5vw,80px);margin-bottom:clamp(28px,4vw,55px); }
+.world-page .wtlf-atlas-intro h2 { font-size:clamp(44px,5.6vw,86px);line-height:1.04;margin:18px 0 0; }
+.world-page .wtlf-atlas-intro p { max-width:440px;color:#d1bfb3;font-size:clamp(15px,1.3vw,18px);line-height:1.7;margin-bottom:20px; }
+.world-page .wtlf-atlas-primary { display:block;position:relative;overflow:hidden;border:1px solid rgba(232,177,146,.25);background:#20171b; }
+.world-page .wtlf-atlas-primary img { display:block;width:100%;height:clamp(350px,55vw,720px);object-fit:cover;object-position:center;transition:transform .4s ease; }
+.world-page .wtlf-atlas-primary>span { position:absolute;bottom:0;inset-inline:0;padding:55px clamp(22px,3vw,42px) 22px;background:linear-gradient(0deg,rgba(9,7,9,.95),transparent);display:flex;justify-content:space-between;gap:20px;font-size:11px;font-weight:700;letter-spacing:.15em; }
+.world-page .wtlf-atlas-primary:hover img,.world-page .wtlf-atlas-place:hover img { transform:scale(1.025); }
+.world-page .wtlf-atlas-places { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px);margin-top:clamp(12px,2vw,24px); }
+.world-page .wtlf-atlas-place { min-width:0;display:block;overflow:hidden; }
+.world-page .wtlf-atlas-place img { display:block;width:100%;height:clamp(160px,22vw,280px);object-fit:cover;transition:transform .4s ease; }
+.world-page .wtlf-atlas-place>span { display:block;padding-top:12px;font:italic clamp(18px,2vw,26px)/1.25 Georgia,serif; }
+@media (max-width:850px) {
+ .world-page .wtlf-atlas-intro { grid-template-columns:1fr;gap:12px; }
+ .world-page .wtlf-atlas-primary img { height:clamp(300px,70vw,560px); }
+}
+@media (max-width:600px) {
+ 
+ .world-page .wtlf-atlas-places { grid-template-columns:1fr; }
+ .world-page .wtlf-atlas-place img { height:240px; }
+ .world-page .wtlf-atlas-primary img { height:320px; }
+ .world-page .wtlf-atlas-primary>span { font-size:10px; }
+}
+@media (prefers-reduced-motion:reduce) {
+ .world-page .wtlf-atlas-primary img,.world-page .wtlf-atlas-place img { transition:none; }
 }
