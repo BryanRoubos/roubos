@@ -26,7 +26,7 @@ export default function RootLayout({children}:Readonly<{children:React.ReactNode
   sameAs:[site.github,site.linkedin],
   description:site.description,
   affiliation:{"@type":"CollegeOrUniversity",name:"HU University of Applied Sciences Utrecht"},
-  knowsAbout:["Software Engineering","Backend Development","Machine Learning","Python","AI Infrastructure","Creative Writing","Worldbuilding"],
+  knowsAbout:["Software Engineering","Backend Development","Go","Kubernetes","APIs","AI Infrastructure","Creative Writing","Worldbuilding"],
  };
  return <html lang="en"><body id="top"><a className="skip-link" href="#main">Skip to content</a><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(person).replace(/</g,"\\u003c")}}/><SiteHeader/><main id="main">{children}</main><SiteFooter/></body></html>;
 }

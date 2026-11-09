@@ -16,8 +16,8 @@ export default function Home() {
           <div className="reference-hero-copy">
             <div className="reference-overline"><span>BRYAN ROUBOS</span><i /></div>
             <h1 id="reference-headline">I build systems.<br /><em>And worlds.</em></h1>
-            <p className="reference-deck">Software engineering, machine learning,<br />{" "}and original worldbuilding.</p>
-            <p className="reference-intro">I&apos;m a Software Engineering student at HU Utrecht, working toward machine learning engineering. I build software, study how intelligent systems work, and create the original fantasy universe <em>Where the Light Falls</em>.</p>
+            <p className="reference-deck">Software engineering, AI infrastructure,<br />{" "}and original worldbuilding.</p>
+            <p className="reference-intro">I&apos;m a Software Engineering student at HU Utrecht, focused on backend development and AI infrastructure, with the ambition to grow into AI engineering. Outside engineering, I create the original fantasy universe <em>Where the Light Falls</em>.</p>
             <div className="reference-hero-actions">
               <Link href="/engineering" className="reference-primary">EXPLORE ENGINEERING</Link>
               <Link className="reference-secondary" href="/where-the-light-falls">ENTER WHERE THE LIGHT FALLS</Link>
@@ -31,9 +31,9 @@ export default function Home() {
           <div className="reference-card-art" aria-hidden="true" />
           <div className="reference-card-overlay" aria-hidden="true" />
           <div className="reference-card-copy">
-            <span className="reference-card-category">BACKEND / SYSTEMS / MACHINE LEARNING</span>
-            <h2>Engineering &amp;<br />Machine Learning</h2>
-            <p>Backend systems, machine learning foundations and experiments built to understand how models learn and behave.</p>
+            <span className="reference-card-category">BACKEND / SYSTEMS / AI INFRASTRUCTURE</span>
+            <h2>Engineering &amp;<br />AI Infrastructure</h2>
+            <p>Backend development, APIs and the infrastructure behind AI systems.</p>
             <span className="reference-card-action">EXPLORE ENGINEERING</span>
           </div>
         </Link>
@@ -53,7 +53,7 @@ export default function Home() {
         <span className="reference-section-index">01 / CURRENTLY</span>
         <div>
           <h2 id="portfolio-now-title">What I&apos;m <em>building now.</em></h2>
-          <p>I&apos;m a backend intern at Tandem-IT, contributing to HU Utrecht&apos;s AI Infrastructure Cluster. Alongside that work, I&apos;m building Fantasy World AI Lab while strengthening my Python, mathematics and machine learning foundations.</p>
+          <p>I&apos;m a backend intern at Tandem-IT, contributing to HU Utrecht&apos;s AI Infrastructure Cluster. I develop backend functionality with Go, Kubernetes and WebSockets, including a Kubernetes web terminal, and research and design an LLM chat interface.</p>
           <Link href="/engineering" className="portfolio-inline-link">MORE ABOUT MY ENGINEERING WORK</Link>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function Home() {
         <span className="reference-section-index">02 / CONNECT</span>
         <div>
           <h2>Let&apos;s make<br /><em>something real.</em></h2>
-          <p>I&apos;m interested in machine learning internships, technical projects and international study opportunities.</p>
+          <p>I&apos;m interested in backend and AI engineering internships, technical projects and international opportunities.</p>
           <div className="reference-contact-links">
             <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LINKEDIN</a>
             <a href={site.github} target="_blank" rel="noopener noreferrer">GITHUB</a>

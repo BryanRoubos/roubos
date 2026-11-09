@@ -2,16 +2,16 @@
 
 Official website: https://bryanroubos.com
 
-A software engineering and machine learning focused portfolio, with an integrated public home for the original fantasy novel **Where the Light Falls**.
+A software engineering and AI infrastructure focused portfolio, with an integrated public home for the original fantasy novel **Where the Light Falls**.
 
 ## About
 
-Bryan Roubos is a Software Engineering student at HU Utrecht and backend intern at Tandem-IT, working toward machine learning engineering. The portfolio presents relevant engineering work, the Fantasy World AI Lab project, and original storytelling developed through prose, visual worldbuilding, 3D models, cinematics, and small interactive experiments.
+Bryan Roubos is a Software Engineering student at HU Utrecht and backend intern at Tandem-IT, aspiring to grow into AI engineering. The portfolio presents backend development with Go, Kubernetes, WebSockets and APIs for HU Utrecht's AI Infrastructure Cluster, research and design for an LLM chat interface, and original storytelling developed through prose, visual worldbuilding, 3D models, cinematics, and small interactive experiments.
 
 ## Pages
 
 - `/` - Introduction, Engineering and Where the Light Falls
-- `/engineering` - Technical direction, Fantasy World AI Lab, and selected work
+- `/engineering` - Backend development, AI Infrastructure Cluster work, and selected experience
 - `/where-the-light-falls` - Story overview and creative process
 - `/where-the-light-falls/world` - Illustrated canyon city atlas
 - `/where-the-light-falls/characters` - All five publicly introduced characters

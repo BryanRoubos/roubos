@@ -13,7 +13,7 @@ export default function OpengraphImage() {
           <span>How &amp; why.</span>
           <span style={{ color: "#c5d8d2" }}>Then build.</span>
         </div>
-        <div style={{ display: "flex", fontSize: 28, color: "#a9b4c0" }}>Software Engineering · Machine Learning · Where the Light Falls</div>
+        <div style={{ display: "flex", fontSize: 28, color: "#a9b4c0" }}>Software Engineering · AI Infrastructure · Where the Light Falls</div>
       </div>
     ),
     size
