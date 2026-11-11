@@ -15,11 +15,10 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="shell header-inner">
         <Link href="/" className="brand" aria-label="Bryan Roubos, home">
-          <span className="brand-monogram" aria-hidden="true">BR<span className="brand-dot">.</span></span>
-          <span className="brand-name">BRYAN<br />ROUBOS</span>
+          <span className="brand-name">BRYAN <span>ROUBOS<span className="brand-dot">.</span></span></span>
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navigation.filter((item) => item.label !== "Connect").map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+          {navigation.filter((item) => item.label !== "Connect").map((item) => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>{item.label}</Link>)}
         </nav>
         <Link className="header-contact" href="/#contact">CONNECT</Link>
         <details ref={menuRef} className="mobile-menu">

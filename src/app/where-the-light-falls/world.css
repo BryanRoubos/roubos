@@ -343,3 +343,85 @@
   .world-page .world-preview-grid > img { max-height:none; }
   .world-page .world-hero-copy { padding-inline:var(--gutter); }
 }
+
+/* Art direction: show AI-assisted illustrations at editorial sizes.
+   Natural image ratios prevent the large empty frames caused by contain + forced heights. */
+.world-page .world-hero{
+  min-height:clamp(590px,72svh,690px);height:auto;align-items:center;
+  background:radial-gradient(ellipse at 76% 38%,rgba(105,46,52,.21),transparent 56%),#0b090c;
+}
+.world-page .world-hero-image{
+  inset:auto;
+  top:clamp(38px,5vw,80px);
+  right:max(var(--gutter),calc((100vw - var(--max))/2 + var(--gutter)));
+  width:min(48vw,680px);
+  height:clamp(340px,36vw,510px);
+  object-fit:cover;
+  object-position:center;
+  border:1px solid rgba(232,177,146,.3);
+  border-radius:4px;
+}
+.world-page .world-hero-shade{
+  background:linear-gradient(90deg,#0b090c 0%,rgba(11,9,12,.96) 27%,rgba(11,9,12,.48) 62%,rgba(11,9,12,.04) 100%);
+}
+.world-page .world-hero-copy{
+  position:relative;z-index:1;
+  padding-block:clamp(70px,8vw,115px);
+}
+.world-page .world-hero h1{font-size:clamp(58px,7.1vw,108px)}
+.world-page .wtlf-atlas-primary,
+.world-page .wtlf-atlas-places{max-width:900px;margin-inline:auto}
+.world-page .wtlf-atlas-primary img{height:clamp(270px,34vw,430px)}
+.world-page .wtlf-atlas-places{margin-top:clamp(14px,2vw,24px)}
+.world-page .wtlf-atlas-place img{height:clamp(160px,18vw,230px)}
+.world-page .world-spotlight>img,
+.world-page .world-preview-grid>img{
+  display:block;width:auto;max-width:100%;height:auto;max-height:500px;
+  object-fit:contain;justify-self:center;background:transparent;
+}
+.world-page .wtlf-character-teaser img{
+  width:100%;height:auto;aspect-ratio:auto;max-height:280px;
+  object-fit:contain;background:transparent;border:1px solid rgba(232,177,146,.22);
+}
+.world-page .wtlf-profile-art img{
+  display:block;width:auto;max-width:100%;height:auto;max-height:520px;
+  object-fit:contain;background:transparent;margin-inline:auto;
+}
+.world-page .wtlf-atlas-entry{grid-template-columns:minmax(0,.95fr) minmax(0,1fr)}
+.world-page .wtlf-atlas-entry figure{max-width:720px}
+.world-page .wtlf-atlas-entry figure img{width:100%;height:auto;max-height:430px;object-fit:contain}
+@media(max-width:850px){
+  .world-page .world-hero{min-height:0;display:block}
+  .world-page .world-hero-image{
+    top:24px;right:var(--gutter);width:calc(100% - 2 * var(--gutter));
+    height:clamp(230px,48vw,360px);object-position:center 40%;
+  }
+  .world-page .world-hero-shade{
+    background:linear-gradient(0deg,#0b090c 0%,rgba(11,9,12,.97) 33%,rgba(11,9,12,.12) 72%);
+  }
+  .world-page .world-hero-copy{padding-top:clamp(300px,58vw,425px);padding-bottom:60px}
+  .world-page .wtlf-atlas-entry{grid-template-columns:1fr}
+  .world-page .wtlf-atlas-entry figure{max-width:650px}
+}
+@media(max-width:600px){
+  .world-page .world-hero-image{height:clamp(205px,55vw,300px);top:18px}
+  .world-page .world-hero-copy{padding-top:clamp(250px,66vw,345px);padding-bottom:45px}
+  .world-page .world-hero h1{font-size:clamp(48px,12vw,66px)}
+  .world-page .wtlf-atlas-primary img{height:260px}
+  .world-page .wtlf-atlas-place img{height:auto;max-height:260px;object-fit:contain}
+  .world-page .wtlf-character-teaser img{max-height:230px}
+  .world-page .world-spotlight>img,
+  .world-page .world-preview-grid>img{max-height:400px}
+}
+
+/* Chapter illustrations should have borders around the actual artwork, not an
+   oversized 100%-width box whose contents shrink to a max-height. */
+.world-page .chapter-inline-art{max-width:520px}
+.world-page .chapter-inline-art img{
+  display:block;width:auto;max-width:100%;height:auto;max-height:540px;
+  object-fit:contain;margin-inline:auto;
+}
+@media(max-width:600px){
+  .world-page .chapter-inline-art{max-width:100%;margin-inline:auto}
+  .world-page .chapter-inline-art img{max-height:410px}
+}

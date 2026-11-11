@@ -273,3 +273,40 @@ body:has(.engineering-page) .engineering-hero-inner{
  .site-footer-compact .footer-bottom nav { row-gap:15px; }
  .next-page>div { padding-block:var(--section-space); }
 }
+
+/* Portfolio refinement: one stable, readable header on every route.
+   Avoid negative-margin overlays that put navigation on top of hero artwork. */
+.site-header{
+  height:76px;
+  background:rgba(12,9,12,.97);
+  border-bottom:1px solid rgba(220,173,148,.22);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.site-header::after{display:none}
+body:has(.reference-home) .site-header,
+body:has(.engineering-page) .site-header,
+body:has(.world-page > .world-hero) .site-header{margin-bottom:0}
+.site-header .brand{gap:0;min-height:44px}
+.site-header .brand-name{
+  display:block;padding:0;border:0;
+  font:700 clamp(13px,1.3vw,16px)/1.2 Arial,Helvetica,sans-serif;
+  letter-spacing:.14em;color:#f4e9e0;white-space:nowrap;
+}
+.site-header .brand-name>span{font-weight:400}
+.site-header .desktop-nav a[aria-current="page"]{color:#f2c6a9}
+.site-header .desktop-nav a[aria-current="page"]::after{
+  content:"";display:block;margin-top:6px;height:1px;background:#d4a68a;
+}
+.site-header .mobile-menu nav{background:#181115;border-color:rgba(220,173,148,.35)}
+body:has(.engineering-page) .engineering-hero-inner{padding-top:clamp(65px,7vw,110px)}
+@media(max-width:900px){
+  .site-header{height:70px}
+  .site-header .mobile-menu nav{top:calc(100% + 10px)}
+}
+@media(max-width:750px){
+  body:has(.engineering-page) .engineering-hero-inner{padding-top:56px}
+}
+@media(max-width:600px){
+  body:has(.engineering-page) .engineering-hero-inner{padding-top:44px}
+}
