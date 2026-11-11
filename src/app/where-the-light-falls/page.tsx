@@ -23,8 +23,8 @@ export default function WhereTheLightFalls() {
       <div className="shell world-hero-copy">
         <span className="eyebrow">AN ORIGINAL DARK FANTASY MYSTERY</span>
         <h1 id="wtlf-title">Where the<br /><em>Light Falls.</em></h1>
-        <p className="world-hero-hook">A divided city. A missing sister. A clue that changes everything.</p>
-        <p className="world-hero-premise">Two years after Mira vanished during an uprising, her brother Elias finds a reason to search again.</p>
+        <p className="world-hero-hook">A divided city. A missing sister. A trail that should have gone cold.</p>
+        <p className="world-hero-premise">Two years after the uprising, a questionable river record gives Elias Varek a reason to search for his sister again.</p>
         <div className="world-hero-actions">
           <Link className="reference-primary" href="/where-the-light-falls/chapter-one">READ CHAPTER ONE</Link>
           <Link className="world-text-link" href="#atlas">EXPLORE THE WORLD</Link>
@@ -36,11 +36,38 @@ export default function WhereTheLightFalls() {
     <WtlfNavigation />
 
 
+    <section className="section-space world-gallery-section" id="mira" aria-labelledby="wtlf-mira-title">
+      <div className="shell world-spotlight">
+        <Image unoptimized src={characterArt.mira.src} alt={characterArt.mira.alt} width={480} height={640} sizes="(max-width: 850px) 100vw, 44vw" />
+        <div>
+          <span className="eyebrow">01 / THE MISSING SISTER</span>
+          <h2 id="wtlf-mira-title">She vanished.<br /><em>The questions remained.</em></h2>
+          <p className="world-spotlight-lead">Mira Varek was curious, independent, and determined to see life beyond the canyon. She was fifteen when she disappeared during the uprising.</p>
+          <p>She had friends at the Deepwater docks, plans of her own, and a brother who never stopped looking.</p>
+          <p>Two years later, a questionable river record gives Elias a reason to search again.</p>
+          <Link className="text-link" href="/where-the-light-falls/characters#mira">Meet Mira Varek</Link>
+        </div>
+      </div>
+    </section>
+
+    <section className="section-space world-chapter-preview" aria-labelledby="wtlf-chapter-title">
+      <div className="shell world-preview-grid">
+        <div>
+          <span className="eyebrow">02 / THE OPENING PAGES</span>
+          <h2 id="wtlf-chapter-title">Every search<br /><em>starts somewhere.</em></h2>
+          <blockquote className="world-excerpt">Elias Varek had carried heavier things through the Lower City. Few of them had been packed badly enough to strike back.</blockquote>
+          <p>Begin with Chapter One. Follow Elias into the streets of the Lower City, where an ordinary delivery is only the beginning.</p>
+          <Link className="reference-primary" href="/where-the-light-falls/chapter-one">READ CHAPTER ONE</Link>
+        </div>
+        <Image unoptimized src="/wtlf/chapters/chapter-one-not-enough.png" alt="Elias carrying a poorly packed wooden crate up the Lower City stairs." width={1024} height={1536} sizes="(max-width: 850px) 100vw, 42vw" />
+      </div>
+    </section>
+
     <section className="section-space wtlf-atlas-showcase" id="atlas" aria-labelledby="wtlf-atlas-title">
       <div className="shell">
         <div className="wtlf-atlas-intro">
           <div>
-            <span className="eyebrow">EXPLORE / THE ILLUSTRATED WORLD ATLAS</span>
+            <span className="eyebrow">03 / THE ILLUSTRATED WORLD ATLAS</span>
             <h2 id="wtlf-atlas-title">A city carved<br /><em>into the canyon.</em></h2>
           </div>
           <div>
@@ -62,41 +89,14 @@ export default function WhereTheLightFalls() {
       </div>
     </section>
 
-    <section className="section-space world-gallery-section" id="mira" aria-labelledby="wtlf-mira-title">
-      <div className="shell world-spotlight">
-        <Image unoptimized src={characterArt.mira.src} alt={characterArt.mira.alt} width={480} height={640} sizes="(max-width: 850px) 100vw, 44vw" />
-        <div>
-          <span className="eyebrow">01 / THE MISSING SISTER</span>
-          <h2 id="wtlf-mira-title">She vanished.<br /><em>The questions remained.</em></h2>
-          <p className="world-spotlight-lead">Mira Varek wanted to see the world beyond the canyon. She disappeared during the uprising at fifteen.</p>
-          <p>Two years later, a questionable river record gives her brother Elias a reason to search again.</p>
-          <p>What happened to Mira, and what does the city still conceal?</p>
-          <Link className="text-link" href="/where-the-light-falls/characters#mira">Meet Mira Varek</Link>
-        </div>
-      </div>
-    </section>
-
-    <section className="section-space world-chapter-preview" aria-labelledby="wtlf-chapter-title">
-      <div className="shell world-preview-grid">
-        <div>
-          <span className="eyebrow">02 / THE OPENING PAGES</span>
-          <h2 id="wtlf-chapter-title">Every search<br /><em>starts somewhere.</em></h2>
-          <blockquote className="world-excerpt">Elias Varek had carried heavier things through the Lower City. Few of them had been packed badly enough to strike back.</blockquote>
-          <p>Begin with Chapter One. Read the complete opening chapter, illustrated and with adjustable reading controls.</p>
-          <Link className="reference-primary" href="/where-the-light-falls/chapter-one">READ CHAPTER ONE</Link>
-        </div>
-        <Image unoptimized src="/wtlf/chapters/chapter-one-not-enough.png" alt="Elias carrying a poorly packed wooden crate up the Lower City stairs." width={1024} height={1536} sizes="(max-width: 850px) 100vw, 42vw" />
-      </div>
-    </section>
-
     <section className="section-space world-mediums" id="city" aria-labelledby="wtlf-city-title">
       <div className="shell world-preview-grid">
         <div>
-          <span className="eyebrow">03 / THE CITY</span>
+          <span className="eyebrow">04 / THE DIVIDED CITY</span>
           <h2 id="wtlf-city-title">One city.<br /><em>Different lives.</em></h2>
-          <p>One enormous metropolis spans both rims of a deep canyon. Bridges, trade and the river connect its districts. Rights and opportunities do not reach everyone equally.</p>
+          <p>The Upper and Lower City depend on one another, but belonging is not equal. A guarded entrance controls access above; many who build, supply, and maintain the city below cannot live there.</p>
           <div className="world-discover-links">
-            <Link className="text-link" href="/where-the-light-falls/world">Explore the illustrated atlas</Link>
+            <Link className="text-link" href="/where-the-light-falls/world">See the city and its districts</Link>
             <Link className="text-link" href="/where-the-light-falls/lore">Discover the lore</Link>
           </div>
         </div>
@@ -107,16 +107,16 @@ export default function WhereTheLightFalls() {
     <section className="section-space world-characters" aria-labelledby="wtlf-characters-title">
       <div className="shell">
         <div className="world-section-heading">
-          <span className="eyebrow">04 / THE PEOPLE</span>
+          <span className="eyebrow">05 / THE PEOPLE</span>
           <h2 id="wtlf-characters-title">Lives within<br /><em>the city.</em></h2>
-          <p>Meet the people whose choices shape life above and below the river.</p>
+          <p>Mira had a life beyond the mystery: friends at the docks, a family, and dreams of leaving the canyon. The people who knew her have stories of their own.</p>
         </div>
         <div className="wtlf-character-strip">{characterIds.map(id => {
           const entry = loreEntries.find(e => e.id === id)!;
           const art = characterArt[id];
           return <Link key={id} href={`/where-the-light-falls/characters#${id}`} className="wtlf-character-teaser">
             <Image unoptimized src={art.src} alt={art.alt} width={480} height={640} sizes="(max-width: 650px) 45vw, 20vw" />
-            <h3>{entry.title}</h3><p>{entry.summary}</p>
+            <h3>{entry.title}</h3><p>{id === "maren" ? "Mira’s close friend, determined to earn a greater role in her family’s river trade." : id === "bram" ? "Maren’s father, a river captain who once taught Mira about life on the water." : entry.summary}</p>
           </Link>;
         })}</div>
         <Link className="text-link" href="/where-the-light-falls/characters">Meet the characters</Link>
@@ -125,7 +125,7 @@ export default function WhereTheLightFalls() {
 
     <section className="section-space wtlf-creative-process">
       <div className="shell two-column-section">
-        <div><span className="eyebrow">05 / BEYOND THE PAGE</span><h2>A novel first.<br /><em>A world in many forms.</em></h2></div>
+        <div><span className="eyebrow">06 / BEYOND THE PAGE</span><h2>A novel first.<br /><em>A world in many forms.</em></h2></div>
         <div className="prose">
           <p>Where the Light Falls begins with the novel. Writing the characters and their city comes first.</p>
           <p>Alongside the manuscript, I explore the world through Blender, cinematics and a small game prototype. Different ways to discover how it looks, moves and feels.</p>
@@ -133,6 +133,15 @@ export default function WhereTheLightFalls() {
       </div>
     </section>
 
-    <section className="next-page"><div className="shell"><span>THE WORLDS I BUILD CONNECT</span><Link href="/engineering">The engineering behind the experiments</Link></div></section>
+    <section className="wtlf-reading-invitation" aria-labelledby="wtlf-reading-title">
+      <div className="shell wtlf-reading-invitation-inner">
+        <span className="eyebrow">THE STORY BEGINS HERE</span>
+        <h2 id="wtlf-reading-title">Every answer begins<br /><em>with a question.</em></h2>
+        <p>Enter the Lower City with Elias Varek. Read the opening chapter of <em>Where the Light Falls</em>.</p>
+        <Link className="reference-primary" href="/where-the-light-falls/chapter-one">READ CHAPTER ONE</Link>
+      </div>
+    </section>
+
+    <section className="next-page"><div className="shell"><span>ALSO BY BRYAN ROUBOS</span><Link href="/engineering">The engineering behind the experiments</Link></div></section>
   </div>;
 }
