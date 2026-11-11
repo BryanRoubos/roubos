@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Engineering & AI Infrastructure",
-  description: "Explore Bryan Roubos's backend development and AI infrastructure work at Tandem-IT, including Go, Kubernetes, WebSockets and LLM chat interface research.",
+  description: "Selected work by Bryan Roubos in backend development, AI infrastructure and web products.",
   alternates: { canonical: "/engineering" },
 };
 
@@ -16,16 +16,16 @@ export default function Engineering() {
           <div className="engineering-hero-main">
             <span className="eyebrow">01 / ENGINEERING &amp; AI INFRASTRUCTURE</span>
             <h1 id="engineering-title">Backend systems.<br /><em>AI infrastructure.</em></h1>
-            <p>I&apos;m a Software Engineering student at HU Utrecht, focused on backend development and the infrastructure behind AI systems. My ambition is to grow into AI engineering.</p>
+            <p>I&apos;m a Software Engineering student at HU Utrecht, focused on backend development and the infrastructure behind AI systems. My long-term direction is to build the services and infrastructure that support AI applications.</p>
             <div className="engineering-hero-actions">
               <Link className="reference-primary" href="#projects">EXPLORE THE WORK</Link>
               <a className="text-link" href={site.github} target="_blank" rel="noopener noreferrer">View GitHub</a>
             </div>
           </div>
-          <aside className="engineering-hero-aside" aria-label="Current focus">
-            <span className="eyebrow">CURRENTLY</span>
+          <aside className="engineering-hero-aside" aria-label="Engineering focus">
+            <span className="eyebrow">ENGINEERING FOCUS</span>
             <h2>Backend development<br /><em>for AI infrastructure.</em></h2>
-            <p>Interning at Tandem-IT, contributing to HU Utrecht&apos;s AI Infrastructure Cluster and its GPU-backed workloads.</p>
+            <p>Through a backend internship at Tandem-IT, I contributed to HU Utrecht&apos;s AI Infrastructure Cluster and the services that support its GPU-backed workloads.</p>
             <span className="engineering-hero-aside-foot">TANDEM-IT / HU UTRECHT</span>
           </aside>
         </div>
@@ -40,20 +40,14 @@ export default function Engineering() {
       <section className="section-space engineering-feature" id="projects" aria-labelledby="engineering-project-title">
         <div className="shell two-column-section">
           <div>
-            <span className="eyebrow">02 / CURRENT WORK</span>
+            <span className="eyebrow">02 / SELECTED PROJECT</span>
             <h2 id="engineering-project-title">AI Infrastructure<br /><em>Cluster.</em></h2>
             <p className="engineering-feature-note">Go / Kubernetes / WebSockets / APIs</p>
           </div>
           <div className="prose engineering-feature-copy">
             <p className="engineering-lead">Backend development for HU Utrecht&apos;s AI Infrastructure Cluster through my internship at Tandem-IT.</p>
-            <p>I develop backend functionality with Go, Kubernetes, WebSockets and APIs, including a Kubernetes web terminal.</p>
-            <p className="engineering-question">I&apos;m also researching and designing an LLM chat interface, exploring API integration and backend architecture.</p>
-            <ol className="engineering-stages" aria-label="Project approach">
-              <li><span>01</span>Develop backend APIs</li>
-              <li><span>02</span>Build the web terminal</li>
-              <li><span>03</span>Research LLM integration</li>
-            </ol>
-            <p className="engineering-project-status">Current focus: backend development and LLM chat interface research and design.</p>
+            <p>My work used Go and Kubernetes to develop backend services for the cluster.</p>
+            <p className="engineering-question">I also explored how language model integrations fit into the platform’s API and backend architecture.</p>
           </div>
         </div>
       </section>
@@ -63,7 +57,7 @@ export default function Engineering() {
           <div className="section-title-meta"><span>03 / SELECTED EXPERIENCE</span><span>REAL WORK, REAL PROBLEMS</span></div>
           <h2 className="engineering-section-heading" id="engineering-experience-title">Work beyond <em>the prototype.</em></h2>
           <div className="career-timeline">
-            <div className="career-entry"><div className="career-date">2026 - PRESENT</div><div><span className="eyebrow">TANDEM-IT / HU UTRECHT</span><h3>AI Infrastructure Cluster</h3><p>Backend development with Go, Kubernetes, WebSockets and APIs, including a Kubernetes web terminal for infrastructure supporting AI workloads.</p></div></div>
+            <div className="career-entry"><div className="career-date">2026</div><div><span className="eyebrow">TANDEM-IT / HU UTRECHT</span><h3>AI Infrastructure Cluster</h3><p>Backend development for Kubernetes infrastructure supporting AI workloads.</p></div></div>
             <div className="career-entry"><div className="career-date">2025 - 2026</div><div><span className="eyebrow">BACKEND / PRODUCT</span><h3>Groupvibe</h3><p>Board member and backend developer at a social platform with more than 50,000 users. I contributed to software and product decisions alongside the team.</p></div></div>
             <div className="career-entry"><div className="career-date">2026 / HACKATHON</div><div><span className="eyebrow">DIGITAL PRODUCT PASSPORT</span><h3>Third place out of nine teams</h3><p>Built backend APIs and data integration for a construction supply-chain prototype using verifiable credentials and signed CO₂ data in four days.</p></div></div>
           </div>
@@ -77,7 +71,7 @@ export default function Engineering() {
           <div className="prose">
             <div className="engineering-skill-group"><h3>Working with</h3><p>Go, Kubernetes, WebSockets, APIs, Docker and Linux, alongside TypeScript, Node.js, SQL and Python.</p></div>
             <div className="engineering-skill-group"><h3>Exploring further</h3><p>LLM integration, backend architecture, distributed systems and applied AI.</p></div>
-            <p>I&apos;m looking for backend and AI engineering internships, technical projects and international opportunities.</p>
+            <p>I want to deepen my work on distributed systems and apply it to the infrastructure behind AI applications.</p>
           </div>
         </div>
       </section>
