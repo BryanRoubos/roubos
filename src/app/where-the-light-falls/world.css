@@ -436,24 +436,24 @@
   .world-page .chapter-inline-art img{max-height:410px}
 }
 
-/* Homepage atlas: a compact top-to-bottom descent, without oversized AI artwork. */
+/* A substantial three-image atlas gallery, still smaller than the hero artwork. */
 .world-page .wtlf-atlas-places{
-  max-width:900px;
+  max-width:1200px;
   margin:0 auto;
   grid-template-columns:repeat(3,minmax(0,1fr));
   align-items:start;
 }
 .world-page .wtlf-atlas-place img{
-  height:clamp(150px,16vw,195px);
+  height:clamp(225px,23vw,295px);
   object-fit:cover;
   object-position:center;
 }
 @media(max-width:600px){
-  .world-page .wtlf-atlas-places{grid-template-columns:1fr;max-width:360px}
+  .world-page .wtlf-atlas-places{grid-template-columns:1fr;max-width:440px}
   .world-page .wtlf-atlas-place img{
     width:100%;
-    height:195px;
-    max-height:195px;
+    height:clamp(230px,60vw,310px);
+    max-height:310px;
     object-fit:cover;
   }
 }
