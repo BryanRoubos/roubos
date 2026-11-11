@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 const characterIds = ["elias", "mira", "maren", "bram", "unnamed-figure"];
+const atlasDescent = ["upper-access", "middle-heights", "deepwater"] as const;
 
 export default function WhereTheLightFalls() {
   return <div className="world-page">
@@ -43,35 +44,34 @@ export default function WhereTheLightFalls() {
             <h2 id="wtlf-atlas-title">A city carved<br /><em>into the canyon.</em></h2>
           </div>
           <div>
-            <p>From the Upper City to the waterfront of Deepwater, discover the places and people that shape Where the Light Falls.</p>
+            <p>From the guarded approach to the Upper City, follow the terraces down toward Deepwater and the river.</p>
             <Link className="reference-primary" href="/where-the-light-falls/world">EXPLORE THE WORLD ATLAS</Link>
           </div>
         </div>
-        <Link href="/where-the-light-falls/world" className="wtlf-atlas-primary" aria-label="Explore the illustrated World Atlas">
-          <Image unoptimized src="/wtlf/deepwater-waterfront.png" alt="Riverboats, cargo workers and the waterfront at Deepwater." width={1672} height={941} sizes="(max-width: 850px) 100vw, 90vw" />
-          <span>DEEPWATER WATERFRONT <span aria-hidden="true">↗</span></span>
-        </Link>
         <div className="wtlf-atlas-places">
-          {worldArt.slice(1,4).map((place) => (
-            <Link key={place.id} href={`/where-the-light-falls/world#${place.id}`} className="wtlf-atlas-place">
-              <Image unoptimized src={place.src} alt={place.alt} width={750} height={520} sizes="(max-width: 650px) 85vw, 29vw" />
-              <span>{place.title}</span>
-            </Link>
-          ))}
+          {atlasDescent.map((id) => {
+            const place = worldArt.find((entry) => entry.id === id)!;
+            return (
+              <Link key={place.id} href={`/where-the-light-falls/world#${place.id}`} className="wtlf-atlas-place">
+                <Image unoptimized src={place.src} alt={place.alt} width={750} height={520} sizes="(max-width: 650px) 85vw, 29vw" />
+                <span>{place.id === "deepwater" ? "Deepwater Waterfront" : place.title}</span>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
 
-    <section className="section-space world-gallery-section" id="elias" aria-labelledby="wtlf-elias-title">
+    <section className="section-space world-gallery-section" id="mira" aria-labelledby="wtlf-mira-title">
       <div className="shell world-spotlight">
-        <Image unoptimized src="/wtlf/elias-home.webp" alt="Portrait of Elias Varek, a young man from the Lower City." width={640} height={960} sizes="(max-width: 850px) 100vw, 44vw" />
+        <Image unoptimized src={characterArt.mira.src} alt={characterArt.mira.alt} width={480} height={640} sizes="(max-width: 850px) 100vw, 44vw" />
         <div>
-          <span className="eyebrow">01 / THE ONE STILL SEARCHING</span>
-          <h2 id="wtlf-elias-title">He never<br /><em>stopped looking.</em></h2>
-          <p className="world-spotlight-lead">Elias Varek knows the Lower City by its steep stairs, crowded streets and the work that keeps him moving.</p>
-          <p>When a questionable river record surfaces, the disappearance he has lived with for two years becomes a question he can no longer leave alone.</p>
-          <p>His search begins in a city where life above the canyon and life below it rarely follow the same rules.</p>
-          <Link className="text-link" href="/where-the-light-falls/characters#elias">Meet Elias Varek</Link>
+          <span className="eyebrow">01 / THE MISSING SISTER</span>
+          <h2 id="wtlf-mira-title">She vanished.<br /><em>The questions remained.</em></h2>
+          <p className="world-spotlight-lead">Mira Varek wanted to see the world beyond the canyon. She disappeared during the uprising at fifteen.</p>
+          <p>Two years later, a questionable river record gives her brother Elias a reason to search again.</p>
+          <p>What happened to Mira, and what does the city still conceal?</p>
+          <Link className="text-link" href="/where-the-light-falls/characters#mira">Meet Mira Varek</Link>
         </div>
       </div>
     </section>
