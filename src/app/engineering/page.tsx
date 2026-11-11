@@ -4,7 +4,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Engineering & AI Infrastructure",
-  description: "Selected work by Bryan Roubos in backend development, AI infrastructure and web products.",
+  description: "Backend engineering for HU Utrecht's internal AI platform, supporting students, lecturers and research groups using shared GPU infrastructure.",
   alternates: { canonical: "/engineering" },
 };
 
@@ -25,7 +25,7 @@ export default function Engineering() {
           <aside className="engineering-hero-aside" aria-label="Engineering focus">
             <span className="eyebrow">ENGINEERING FOCUS</span>
             <h2>Backend development<br /><em>for AI infrastructure.</em></h2>
-            <p>Through Tandem-IT, I contribute to backend development for HU Utrecht&apos;s AI Infrastructure Cluster.</p>
+            <p>Through Tandem-IT, I help develop the backend of HU Utrecht&apos;s internal AI platform, built to support students, lecturers, research groups and study programs running and training models on shared GPU infrastructure.</p>
             <span className="engineering-hero-aside-foot">TANDEM-IT / HU UTRECHT</span>
           </aside>
         </div>
@@ -45,8 +45,9 @@ export default function Engineering() {
             <p className="engineering-feature-note">Go / Kubernetes / WebSockets / APIs</p>
           </div>
           <div className="prose engineering-feature-copy">
-            <p className="engineering-lead">The interesting problems are often between the systems.</p>
-            <p>Through Tandem-IT, I work on backend functionality for HU Utrecht&apos;s AI Infrastructure Cluster, using Go, Kubernetes and APIs.</p>
+            <p className="engineering-lead">AI computing should be available beyond a single lab or project.</p>
+            <p>HU Utrecht&apos;s AI Infrastructure Cluster is an internal platform intended for students, lecturers, research groups and entire study programs to run and train AI models using shared GPU infrastructure.</p>
+            <p>Through Tandem-IT, I contribute to its backend services and integrations, working with Go, Kubernetes and APIs.</p>
             <p className="engineering-question">I&apos;m also investigating how language-model services can connect to the platform through a clear backend API.</p>
             <p className="engineering-project-status">This is ongoing team work, not a finished standalone product. I&apos;ll publish a deeper technical case study when there is a result I can demonstrate properly.</p>
           </div>
@@ -58,7 +59,7 @@ export default function Engineering() {
           <div className="section-title-meta"><span>03 / SELECTED EXPERIENCE</span><span>REAL WORK, REAL PROBLEMS</span></div>
           <h2 className="engineering-section-heading" id="engineering-experience-title">Work with <em>real context.</em></h2>
           <div className="career-timeline">
-            <div className="career-entry"><div className="career-date">2026</div><div><span className="eyebrow">TANDEM-IT / HU UTRECHT</span><h3>AI Infrastructure Cluster</h3><p>Backend development for Kubernetes infrastructure supporting AI workloads.</p></div></div>
+            <div className="career-entry"><div className="career-date">2026</div><div><span className="eyebrow">TANDEM-IT / HU UTRECHT</span><h3>AI Infrastructure Cluster</h3><p>Backend work on an internal platform for running and training AI models across HU Utrecht.</p></div></div>
             <div className="career-entry"><div className="career-date">2025 - 2026</div><div><span className="eyebrow">BACKEND / PRODUCT</span><h3>Groupvibe</h3><p>Board member and backend developer at a social platform with more than 50,000 users. I contributed to software and product decisions alongside the team.</p></div></div>
             <div className="career-entry"><div className="career-date">2026 / HACKATHON</div><div><span className="eyebrow">DIGITAL PRODUCT PASSPORT</span><h3>Third place out of nine teams</h3><p>Contributed backend APIs and data integration to a construction supply-chain prototype using verifiable credentials and signed CO₂ data.</p></div></div>
           </div>
