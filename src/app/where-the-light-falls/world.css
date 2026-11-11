@@ -470,3 +470,43 @@
 @media(max-width:850px){
   .world-page .world-hero-image{object-position:54% 43%}
 }
+
+/* Story-first homepage: closer narrative rhythm and a strong reading invitation. */
+.world-page .world-gallery-section,
+.world-page .world-chapter-preview,
+.world-page .wtlf-atlas-showcase,
+.world-page .world-mediums,
+.world-page .world-characters{
+  padding-block:clamp(68px,7vw,110px);
+}
+.world-page .wtlf-reading-invitation{
+  padding-block:clamp(76px,9vw,128px);
+  background:radial-gradient(ellipse at 50% 100%,rgba(112,47,52,.22),transparent 70%),#130d11;
+  text-align:center;
+  border-top:1px solid rgba(232,177,146,.14);
+}
+.world-page .wtlf-reading-invitation-inner{
+  max-width:760px;
+  margin-inline:auto;
+}
+.world-page .wtlf-reading-invitation h2{
+  font-size:clamp(44px,5.3vw,76px);
+  line-height:1.06;
+  margin:18px 0 21px;
+}
+.world-page .wtlf-reading-invitation p{
+  font-size:clamp(16px,1.4vw,19px);
+  line-height:1.65;
+  color:#d6bfb0;
+  margin:0 auto 28px;
+  max-width:530px;
+}
+.world-page .wtlf-reading-invitation .reference-primary{justify-content:center}
+.world-page .next-page{padding-block:clamp(24px,3vw,40px)}
+@media(max-width:600px){
+  .world-page .world-gallery-section,
+  .world-page .world-chapter-preview,
+  .world-page .wtlf-atlas-showcase,
+  .world-page .world-mediums,
+  .world-page .world-characters{padding-block:62px}
+}
