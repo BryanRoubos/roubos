@@ -379,13 +379,14 @@
   display:block;width:auto;max-width:100%;height:auto;max-height:500px;
   object-fit:contain;justify-self:center;background:transparent;
 }
-/* Size the actual portrait, not a full-width image canvas. The former
-   width:100% + max-height:280px + object-fit:contain created empty space
-   *inside* the bordered image element on wide character cards. */
+/* All five portrait boxes share a height so their names start at the
+   same baseline. Width remains automatic: the thin border hugs each portrait
+   instead of outlining a wider, empty image canvas. */
 .world-page .wtlf-character-teaser img{
   display:block;
-  width:min(100%, 210px);
-  height:auto;
+  width:auto;
+  max-width:100%;
+  height:clamp(160px, 22vw, 280px);
   max-height:none;
   aspect-ratio:auto;
   object-fit:contain;
