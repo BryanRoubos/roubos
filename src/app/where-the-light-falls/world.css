@@ -436,24 +436,37 @@
   .world-page .chapter-inline-art img{max-height:410px}
 }
 
-/* Homepage atlas: a compact top-to-bottom descent, without oversized AI artwork. */
+/* Show the geographic descent at a meaningful editorial scale, without
+   bringing back the artifact-revealing full-width waterfront feature. */
 .world-page .wtlf-atlas-places{
-  max-width:900px;
+  max-width:1200px;
   margin:0 auto;
   grid-template-columns:repeat(3,minmax(0,1fr));
   align-items:start;
 }
 .world-page .wtlf-atlas-place img{
-  height:clamp(150px,16vw,195px);
+  height:clamp(225px,23vw,295px);
   object-fit:cover;
   object-position:center;
 }
 @media(max-width:600px){
-  .world-page .wtlf-atlas-places{grid-template-columns:1fr;max-width:360px}
+  .world-page .wtlf-atlas-places{grid-template-columns:1fr;max-width:440px}
   .world-page .wtlf-atlas-place img{
     width:100%;
-    height:195px;
-    max-height:195px;
+    height:clamp(230px,60vw,310px);
+    max-height:310px;
     object-fit:cover;
   }
+}
+
+/* Refine the hero illustration's placement, not its dimensions.
+   Lower it toward the heading and favor the canyon crossing as a focal point. */
+@media(min-width:851px){
+  .world-page .world-hero-image{
+    top:clamp(65px,7vw,105px);
+    object-position:54% 46%;
+  }
+}
+@media(max-width:850px){
+  .world-page .world-hero-image{object-position:54% 43%}
 }
