@@ -47,6 +47,10 @@ export default function WhereTheLightFalls() {
             <Link className="reference-primary" href="/where-the-light-falls/world">EXPLORE THE WORLD ATLAS</Link>
           </div>
         </div>
+        <Link href="/where-the-light-falls/world" className="wtlf-atlas-primary" aria-label="Explore the illustrated World Atlas">
+          <Image unoptimized src={worldArt[0].src} alt={worldArt[0].alt} width={1672} height={941} sizes="(max-width: 850px) 100vw, 90vw" />
+          <span>THE CANYON METROPOLIS <span aria-hidden="true">↗</span></span>
+        </Link>
         <div className="wtlf-atlas-places">
           {worldArt.slice(1,4).map((place) => (
             <Link key={place.id} href={`/where-the-light-falls/world#${place.id}`} className="wtlf-atlas-place">
