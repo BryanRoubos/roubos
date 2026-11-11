@@ -17,7 +17,7 @@ export default function Home() {
             <div className="reference-overline"><span>BRYAN ROUBOS</span><i /></div>
             <h1 id="reference-headline">I build systems.<br /><em>And worlds.</em></h1>
             <p className="reference-deck">Backend engineering. AI infrastructure.<br />{" "}A world of my own.</p>
-            <p className="reference-intro">I study Software Engineering at HU Utrecht and contribute to backend development for its AI Infrastructure Cluster. Outside code, I write <em>Where the Light Falls</em>, an original fantasy novel.</p>
+            <p className="reference-intro">I study Software Engineering at HU Utrecht and help build the backend of an internal platform for running and training AI models. Outside code, I write <em>Where the Light Falls</em>, an original fantasy novel.</p>
             <div className="reference-hero-actions">
               <Link href="/engineering" className="reference-primary">EXPLORE ENGINEERING</Link>
               <Link className="reference-secondary" href="/where-the-light-falls">ENTER WHERE THE LIGHT FALLS</Link>
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="reference-card-copy">
               <span className="reference-card-category">BACKEND / SYSTEMS / AI INFRASTRUCTURE</span>
               <h3>Engineering &amp;<br />AI Infrastructure</h3>
-              <p>Backend development for an AI infrastructure project at HU Utrecht, alongside experience with Groupvibe and WebSneller.</p>
+              <p>Helping build shared AI infrastructure for students, lecturers, research groups and study programs at HU Utrecht, alongside experience with Groupvibe and WebSneller.</p>
               <span className="reference-card-action">EXPLORE ENGINEERING</span>
             </div>
           </Link>
