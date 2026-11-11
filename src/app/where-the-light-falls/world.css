@@ -413,3 +413,15 @@
   .world-page .world-spotlight>img,
   .world-page .world-preview-grid>img{max-height:400px}
 }
+
+/* Chapter illustrations should have borders around the actual artwork, not an
+   oversized 100%-width box whose contents shrink to a max-height. */
+.world-page .chapter-inline-art{max-width:520px}
+.world-page .chapter-inline-art img{
+  display:block;width:auto;max-width:100%;height:auto;max-height:540px;
+  object-fit:contain;margin-inline:auto;
+}
+@media(max-width:600px){
+  .world-page .chapter-inline-art{max-width:100%;margin-inline:auto}
+  .world-page .chapter-inline-art img{max-height:410px}
+}
