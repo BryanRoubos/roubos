@@ -380,8 +380,19 @@
   object-fit:contain;justify-self:center;background:transparent;
 }
 .world-page .wtlf-character-teaser img{
-  width:100%;height:auto;aspect-ratio:auto;max-height:280px;
-  object-fit:contain;background:transparent;border:1px solid rgba(232,177,146,.22);
+  /* Size the image element to the portrait itself so the border cannot
+     surround empty letterboxing inside a full-width card. */
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:clamp(210px,20vw,280px);
+  max-height:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:left top;
+  margin:0;
+  background:transparent;
+  border:1px solid rgba(232,177,146,.22);
 }
 .world-page .wtlf-profile-art img{
   display:block;width:auto;max-width:100%;height:auto;max-height:520px;
@@ -409,7 +420,7 @@
   .world-page .world-hero h1{font-size:clamp(48px,12vw,66px)}
   .world-page .wtlf-atlas-primary img{height:260px}
   .world-page .wtlf-atlas-place img{height:auto;max-height:260px;object-fit:contain}
-  .world-page .wtlf-character-teaser img{max-height:230px}
+  .world-page .wtlf-character-teaser img{height:clamp(210px,55vw,240px);max-height:none}
   .world-page .world-spotlight>img,
   .world-page .world-preview-grid>img{max-height:400px}
 }
