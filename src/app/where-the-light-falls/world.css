@@ -379,20 +379,16 @@
   display:block;width:auto;max-width:100%;height:auto;max-height:500px;
   object-fit:contain;justify-self:center;background:transparent;
 }
-/* All five portrait boxes share a height so their names start at the
-   same baseline. Width remains automatic: the thin border hugs each portrait
-   instead of outlining a wider, empty image canvas. */
+/* Give portraits a shared frame while keeping the entire illustration visible. */
 .world-page .wtlf-character-teaser img{
   display:block;
-  width:auto;
-  max-width:100%;
-  height:clamp(160px, 22vw, 280px);
-  max-height:none;
-  aspect-ratio:auto;
+  width:100%;
+  height:auto;
+  aspect-ratio:3/4;
   object-fit:contain;
-  object-position:left top;
+  object-position:left bottom;
   background:transparent;
-  border:1px solid rgba(232,177,146,.22);
+  border:0;
 }
 .world-page .wtlf-profile-art img{
   display:block;width:auto;max-width:100%;height:auto;max-height:520px;
@@ -439,22 +435,23 @@
 /* Show the geographic descent at a meaningful editorial scale, without
    bringing back the artifact-revealing full-width waterfront feature. */
 .world-page .wtlf-atlas-places{
-  max-width:1200px;
+  max-width:none;
   margin:0 auto;
   grid-template-columns:repeat(3,minmax(0,1fr));
   align-items:start;
 }
 .world-page .wtlf-atlas-place img{
-  height:clamp(225px,23vw,295px);
+  height:auto;
+  aspect-ratio:4/3;
   object-fit:cover;
   object-position:center;
 }
 @media(max-width:600px){
-  .world-page .wtlf-atlas-places{grid-template-columns:1fr;max-width:440px}
+  .world-page .wtlf-atlas-places{grid-template-columns:1fr;max-width:none}
   .world-page .wtlf-atlas-place img{
     width:100%;
-    height:clamp(230px,60vw,310px);
-    max-height:310px;
+    height:auto;
+    max-height:none;
     object-fit:cover;
   }
 }
@@ -469,6 +466,14 @@
 }
 @media(max-width:850px){
   .world-page .world-hero-image{object-position:54% 43%}
+}
+
+/* Keep the Divided City illustration at its natural proportions. */
+.world-page .world-mediums .world-preview-grid > img{
+  max-height:720px;
+}
+@media(max-width:850px){
+  .world-page .world-mediums .world-preview-grid > img{max-height:560px}
 }
 
 /* Story-first homepage: closer narrative rhythm and a strong reading invitation. */
