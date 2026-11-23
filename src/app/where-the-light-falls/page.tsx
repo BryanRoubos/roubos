@@ -125,10 +125,10 @@ export default function WhereTheLightFalls() {
 
     <section className="section-space wtlf-creative-process">
       <div className="shell two-column-section">
-        <div><span className="eyebrow">06 / BEYOND THE PAGE</span><h2>A novel first.<br /><em>A world in many forms.</em></h2></div>
+        <div><span className="eyebrow">06 / THE WRITING PROCESS</span><h2>A novel first.<br /><em>Built through the page.</em></h2></div>
         <div className="prose">
-          <p>Where the Light Falls begins with the novel. Writing the characters and their city comes first.</p>
-          <p>Alongside the manuscript, I explore the world through Blender, cinematics and a small game prototype. Different ways to discover how it looks, moves and feels.</p>
+          <p>Where the Light Falls is a fantasy novel. The manuscript, its characters and their city are the focus of this project.</p>
+          <p>I use visual research and setting studies to support the writing and develop the world on the page.</p>
         </div>
       </div>
     </section>
