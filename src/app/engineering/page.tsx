@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Engineering & AI Infrastructure",
+  title: "AI Engineering & Systems",
   description: "Backend engineering for HU Utrecht's internal AI platform, supporting students, lecturers and research groups using shared GPU infrastructure.",
   alternates: { canonical: "/engineering" },
 };
@@ -14,9 +14,9 @@ export default function Engineering() {
       <section className="engineering-hero" aria-labelledby="engineering-title">
         <div className="shell engineering-hero-inner">
           <div className="engineering-hero-main">
-            <span className="eyebrow">01 / ENGINEERING &amp; AI INFRASTRUCTURE</span>
-            <h1 id="engineering-title">Backend systems.<br /><em>AI infrastructure.</em></h1>
-            <p>I&apos;m a Software Engineering student who wants to know what happens behind the interface. I work on backend development and explore how software, infrastructure and AI systems fit together.</p>
+            <span className="eyebrow">01 / AI ENGINEERING &amp; SYSTEMS</span>
+            <h1 id="engineering-title">AI engineering.<br /><em>Reliable systems.</em></h1>
+            <p>I&apos;m a Software Engineering student who wants to know what happens behind the interface. I aspire to become an AI engineer, exploring how models, software and infrastructure fit together to build reliable AI applications.</p>
             <div className="engineering-hero-actions">
               <Link className="reference-primary" href="#projects">EXPLORE THE WORK</Link>
               <a className="text-link" href={site.github} target="_blank" rel="noopener noreferrer">View GitHub</a>
@@ -72,7 +72,7 @@ export default function Engineering() {
           <div><span className="eyebrow">04 / TOOLKIT &amp; DIRECTION</span><h2>Practical tools.<br /><em>Deeper questions.</em></h2></div>
           <div className="prose">
             <div className="engineering-skill-group"><h3>Engineering</h3><p>Backend development with Go, APIs, Kubernetes and related tooling. Earlier projects involved TypeScript, Node.js, SQL and Python.</p></div>
-            <div className="engineering-skill-group"><h3>Where I want to go</h3><p>Deeper into distributed systems, model-serving infrastructure and the engineering behind practical AI applications.</p></div>
+            <div className="engineering-skill-group"><h3>Where I want to go</h3><p>Deeper into model integration, retrieval, evaluation and the engineering behind reliable AI applications.</p></div>
           </div>
         </div>
       </section>
