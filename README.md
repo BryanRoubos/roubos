@@ -2,7 +2,7 @@
 
 Official website: https://bryanroubos.com
 
-A software engineering and AI infrastructure focused portfolio, with an integrated public home for the original fantasy novel **Where the Light Falls**.
+An AI engineering focused portfolio, with an integrated public home for the original fantasy novel **Where the Light Falls**.
 
 ## About
 
@@ -11,7 +11,7 @@ Bryan Roubos is a Software Engineering student at HU Utrecht and backend intern 
 ## Pages
 
 - `/` - Introduction, Engineering and Where the Light Falls
-- `/engineering` - Backend development, AI Infrastructure Cluster work, and selected experience
+- `/engineering` - AI engineering direction, AI Infrastructure Cluster work, and selected experience
 - `/where-the-light-falls` - Story overview and creative process
 - `/where-the-light-falls/world` - Illustrated canyon city atlas
 - `/where-the-light-falls/characters` - All five publicly introduced characters
